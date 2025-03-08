@@ -1,0 +1,52 @@
+/* global.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Light Theme */
+  --color-text: #021018;
+  --color-background: #f8fafc;
+  --color-primary: #2abef4;
+  --color-secondary: #177a9b;
+  --color-accent: #6752ef;
+  --color-accent2: #ed02ba;
+
+  /* Tipografía */
+  --font-heading: "Inter", sans-serif;
+  --font-title: "Gugi", sans-serif;
+
+  /* Escala de texto */
+  --text-sm: 0.75rem; /* 12px small*/
+  --text-sm--line-height: calc(1.25 / 0.75);
+  --text-base: 1rem; /* 16px base */
+  --text-base--line-height: calc(1.5 / 1);
+  --text-xl: 1.333rem; /* 21px h5 */
+  --text-xl--line-height: calc(1.75 / 1.333);
+  --text-2xl: 1.777rem; /* 28px h4 */
+  --text-2xl--line-height: calc(2 / 1.777);
+  --text-3xl: 2.369rem; /* 38px h3 */
+  --text-3xl--line-height: calc(2.25 / 2.369);
+  --text-4xl: 3.158rem; /* 50px h2 */
+  --text-4xl--line-height: calc(2.5 / 3.158);
+  --text-5xl: 4.21rem; /* 67px h1 */
+  --text-5xl--line-height: 1;
+}
+
+[data-mode="dark"] {
+  /* Dark Theme */
+  --color-text: #e7f5fd;
+  --color-background: #040608;
+  --color-primary: #0b9fd5;
+  --color-secondary: #64c7e8;
+  --color-accent: #2510ad;
+  --color-accent2: #fd12ca;
+}
+
+html {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  background: var(--color-background);
+  font-size: var(--text-base);
+}

@@ -1,0 +1,41 @@
+---
+import ThemeToggle from "@components/ThemeToggle.astro";
+const navItems = [
+  { name: "Home", url: "/" },
+  { name: "Projects", url: "/blog" },
+  { name: "About", url: "/about" },
+  { name: "Contact", url: "/contact" },
+];
+---
+
+<header class="flex justify-between items-center mx-auto w-7xl m-6">
+  <a href="/" class="text-2xl font-title text-secondary">
+    <span class="text-xl text-text">&lt;</span>ROMZ<span
+      class="text-xl text-text">&gt;</span
+    >
+  </a>
+  <nav>
+    <ul class="flex items-center gap-[4vw] text-base font-bold">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              class="relative font-bold after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-[4px] after:bg-secondary after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-center"
+              href={item.url}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <div class="flex items-center gap-6">
+    <a
+      href="#"
+      class="transition duration-300 px-2.5 py-2 rounded-lg border hover:bg-primary font-bold"
+      >Contact Me</a
+    >
+    <ThemeToggle />
+  </div>
+</header>
