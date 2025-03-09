@@ -1,26 +1,30 @@
 ---
 import ThemeToggle from "@components/ThemeToggle.astro";
 const navItems = [
-  { name: "Home", url: "/" },
-  { name: "Projects", url: "/blog" },
-  { name: "About", url: "/about" },
-  { name: "Contact", url: "/contact" },
+  { name: "Home", url: "#home" },
+  { name: "Projects", url: "#projects" },
+  { name: "About", url: "#about" },
+  { name: "Contact", url: "#contact" },
 ];
 ---
 
-<header class="flex justify-between items-center mx-auto w-7xl m-6">
-  <a href="/" class="text-2xl font-title text-secondary">
+<header
+  class="flex justify-center items-center mx-auto my-1 rounded-2xl py-2 px-6 w-full md:max-w-7xl md:justify-between fixed top-0 left-1/2 -translate-x-1/2 bg-transparent"
+>
+  <a href="/" class="text-2xl font-title text-secondary hidden md:block">
     <span class="text-xl text-text">&lt;</span>ROMZ<span
       class="text-xl text-text">&gt;</span
     >
   </a>
   <nav>
-    <ul class="flex items-center gap-[4vw] text-base font-bold">
+    <ul
+      class="flex items-center gap-[7vw] md:gap-[4vw] text-[14px] md:text-base font-bold"
+    >
       {
         navItems.map((item) => (
           <li>
             <a
-              class="relative font-bold after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-[4px] after:bg-secondary after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-center"
+              class="relative after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-[4px] after:bg-secondary after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-center"
               href={item.url}
             >
               {item.name}
@@ -30,12 +34,42 @@ const navItems = [
       }
     </ul>
   </nav>
-  <div class="flex items-center gap-6">
+  <div class="flex items-center gap-6 ml-4 md:ml-0">
     <a
       href="#"
-      class="transition duration-300 px-2.5 py-2 rounded-lg border hover:bg-primary font-bold"
+      class="transition duration-300 px-2.5 py-2 rounded-lg border hover:bg-primary font-bold hidden md:block"
       >Contact Me</a
     >
     <ThemeToggle />
   </div>
 </header>
+
+<style>
+  @reference './../styles/global.css';
+
+  header {
+    animation: header-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  header {
+    @apply bg-header;
+  }
+
+  @keyframes header-shadown {
+    0% {
+      background-color: transparent;
+      backdrop-filter: blur(0);
+      box-shadow: none;
+    }
+    100% {
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  }
+</style>

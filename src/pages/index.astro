@@ -4,14 +4,27 @@ import HeroSection from "@components/HeroSection.astro";
 import AboutSection from "@components/AboutSection.astro";
 import ExperienceSection from "@components/ExperienceSection.astro";
 import ProjectsSection from "@components/ProjectSection.astro";
+import SectionContainer from "@components/SectionContainer.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout title="Astro App">
-  <HeroSection />
-  <AboutSection />
-  <ExperienceSection />
-  <ProjectsSection />
+  <SectionContainer class="py-16 md:py-36" id="home">
+    <HeroSection />
+    <slot />
+  </SectionContainer>
+  <SectionContainer id="about">
+    <AboutSection />
+    <slot />
+  </SectionContainer>
+  <SectionContainer id="experience">
+    <ExperienceSection />
+    <slot />
+  </SectionContainer>
+  <SectionContainer id="projects">
+    <ProjectsSection />
+    <slot />
+  </SectionContainer>
 </Layout>

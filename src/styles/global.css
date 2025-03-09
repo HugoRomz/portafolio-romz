@@ -7,11 +7,13 @@
 @theme {
   /* Light Theme */
   --color-text: #021018;
-  --color-background: #f8fafc;
+  --color-background: #f9fafb;
   --color-primary: #2abef4;
   --color-secondary: #177a9b;
   --color-accent: #6752ef;
   --color-accent2: #ed02ba;
+
+  --color-header: #ffffff81;
 
   /* Tipografía */
   --font-heading: "Inter", sans-serif;
@@ -42,6 +44,8 @@
   --color-secondary: #64c7e8;
   --color-accent: #2510ad;
   --color-accent2: #fd12ca;
+
+  --color-header: rgba(26, 38, 44, 0.49);
 }
 
 html {
