@@ -1,38 +1,35 @@
 ---
 import ThemeToggle from "@components/ThemeToggle.astro";
 const navItems = [
-  { name: "Home", url: "#home" },
-  { name: "Projects", url: "#projects" },
-  { name: "About", url: "#about" },
-  { name: "Contact", url: "#contact" },
+  { name: "Home", url: "#home", label: "home" },
+  { name: "Projects", url: "#projects", label: "projects" },
+  { name: "About", url: "#about", label: "about" },
+  { name: "Contact", url: "#contact", label: "contact" },
 ];
 ---
 
 <header
-  class="flex justify-center items-center mx-auto my-1 rounded-2xl py-2 px-6 w-full md:max-w-7xl md:justify-between fixed top-0 left-1/2 -translate-x-1/2 bg-transparent"
+  class="flex justify-center items-center mx-auto my-2 rounded-2xl py-2 px-6 w-full md:max-w-7xl md:justify-between fixed top-0 left-1/2 -translate-x-1/2"
 >
   <a href="/" class="text-2xl font-title text-secondary hidden md:block">
     <span class="text-xl text-text">&lt;</span>ROMZ<span
       class="text-xl text-text">&gt;</span
     >
   </a>
-  <nav>
-    <ul
-      class="flex items-center gap-[7vw] md:gap-[4vw] text-[14px] md:text-base font-bold"
-    >
-      {
-        navItems.map((item) => (
-          <li>
-            <a
-              class="relative after:content-[''] after:absolute after:left-0 after:bottom-[-8px] after:w-full after:h-[4px] after:bg-secondary after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-center"
-              href={item.url}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+  <nav
+    class="flex items-center gap-[7vw] md:gap-[4vw] text-[14px] md:text-base font-bold"
+  >
+    {
+      navItems.map((item) => (
+        <a
+          class="relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[4px] after:bg-secondary after:rounded-full after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-center"
+          aria-label={item.label}
+          href={item.url}
+        >
+          {item.name}
+        </a>
+      ))
+    }
   </nav>
   <div class="flex items-center gap-6 ml-4 md:ml-0">
     <a
@@ -43,6 +40,50 @@ const navItems = [
     <ThemeToggle />
   </div>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              console.log("adding class");
+
+              item.classList.add("after:scale-x-100");
+            } else {
+              item.classList.remove("after:scale-x-100");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
 
 <style>
   @reference './../styles/global.css';
