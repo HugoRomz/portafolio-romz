@@ -6,8 +6,8 @@
 
 @theme {
   /* Light Theme */
-  --color-text: #021018;
-  --color-background: #f9fafb;
+  --color-textPrimary: #10101e;
+  --color-background: #e3e3f2;
   --color-primary: #2abef4;
   --color-secondary: #177a9b;
   --color-accent: #6752ef;
@@ -38,19 +38,19 @@
 
 [data-mode="dark"] {
   /* Dark Theme */
-  --color-text: #e7f5fd;
-  --color-background: #040608;
+  --color-textPrimary: #e7f5fd;
+  --color-background: #0d0d1c;
   --color-primary: #0b9fd5;
   --color-secondary: #64c7e8;
   --color-accent: #2510ad;
   --color-accent2: #fd12ca;
 
-  --color-header: rgba(26, 38, 44, 0.49);
+  --color-header: rgba(26, 26, 46, 0.7);
 }
 
 html {
   font-family: var(--font-heading);
-  color: var(--color-text);
+  color: var(--color-textPrimary);
   background: var(--color-background);
   font-size: var(--text-base);
 }
