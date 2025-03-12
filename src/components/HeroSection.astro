@@ -1,1 +1,85 @@
-<div class="h-[1000px] bg-amber-300">h</div>
+---
+import Download from "./icons/Download.astro";
+import Github from "./icons/Github.astro";
+import Linkenid from "./icons/Linkenid.astro";
+---
+
+<div
+  class="absolute right-0 top-[-10%] lg:right-[-10%] lg:top-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
+>
+</div>
+
+<div class="container">
+  <div class="flex items-center gap-5">
+    <div class="space-y-2 md:w-2/3">
+      <h3 class="text-xl font-bold">I am Rafael Rosales</h3>
+      <h1>
+        <span
+          class="text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-accent2 inline-block text-transparent bg-clip-text pb-2"
+          >Software Engineer
+        </span>
+      </h1>
+      <div class="relative flex justify-center md:hidden">
+        <div
+          class="absolute left-0 bottom-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
+        >
+        </div>
+        <img
+          src="https://fastly.picsum.photos/id/270/500/600.jpg?hmac=sXkzSpS4csp5c30p4plTV0lcb0FjZh4vzKnx0pduBMo"
+          alt="Rafael"
+          class="mb-7 mt-3 max-w-[80%] duration-300 origin-center rotate-[4.5deg] border-2 border-primary rounded-[38px] hover:rotate-0 hover:border-accent2"
+        />
+      </div>
+      <p class="max-w-xl text-lg pb-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo nostrum
+        odio dignissimos magni minima nisi reprehenderit officia tempora saepe,
+        error suscipit nobis cum ex odit quos, enim consectetur nihil quia.
+      </p>
+      <div class="flex items-center gap-5 flex-wrap">
+        <button class="btn__outline">
+          Download CV
+          <Download />
+        </button>
+        <div class="flex items-center gap-5">
+          <div class="social__icons">
+            <Linkenid />
+          </div>
+          <div class="social__icons">
+            <Github />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative hidden md:w-1/3 md:flex justify-center">
+      <div
+        class="absolute left-0 bottom-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
+      >
+      </div>
+      <img
+        src="https://fastly.picsum.photos/id/270/500/600.jpg?hmac=sXkzSpS4csp5c30p4plTV0lcb0FjZh4vzKnx0pduBMo"
+        alt="Rafael"
+        class="mb-7 mt-3 max-w-[80%] md:max-w-[90%] duration-300 origin-center rotate-[4.5deg] border-2 border-primary rounded-[38px] hover:rotate-0 hover:border-accent2"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  @reference './../styles/global.css';
+
+  .btn__outline {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-lg font-semibold text-primary border border-primary rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-accent hover:border-transparent hover:to-primary hover:text-textPrimary cursor-pointer;
+  }
+
+  .social__icons {
+    @apply relative border border-primary text-primary size-10 rounded-full grid place-items-center cursor-pointer hover:text-textPrimary duration-300;
+  }
+
+  .social__icons::before {
+    @apply content-[''] absolute w-[100%] h-[100%] bg-primary inset-0 rounded-full scale-0 transition-transform ease-in-out duration-300 -z-10;
+  }
+
+  .social__icons:hover::before {
+    @apply scale-100 origin-center;
+  }
+</style>
