@@ -1,1 +1,119 @@
-<div class="h-[1000px] bg-green-300">h</div>
+<div class="flex justify-center px-0 min-h-svh">
+  <div class="flex gap-x-32 flex-wrap">
+    <div class="timeline-column">
+      <h2 class="title">Education</h2>
+      <div class="timeline-box">
+        <div class="timeline-content">
+          <div class="content">
+            <div class="year">2019 - 2024</div>
+            <h4>
+              Licenciatura en Ingeniería en Desarrollo y Tecnologías de Software
+            </h4>
+            <h5>Universidad Autónoma de Chiapas</h5>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <div class="content">
+            <div class="year">2016 - 2019</div>
+            <h4>Profesional Técnico en Informática</h4>
+            <h5>Colegio Nacional de Educación Profesional Técnica</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-column">
+      <h2 class="title">Experience</h2>
+      <div class="timeline-box">
+        <div class="timeline-content">
+          <div class="content">
+            <div class="year">2022 - 2040</div>
+            <h4>Universidad Autónoma de Chiapas</h4>
+            <h5 class="job">Thesis Project</h5>
+            <p>
+              I developed an Information System for managing the Thesis Seminar
+              using the PEVN stack, applying business rules and documenting the
+              project.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-content">
+          <div class="content">
+            <div class="year">2022 - 2030</div>
+            <h4>Volcana Agencia Digital</h4>
+            <h5 class="job">Intern</h5>
+            <p>
+              I managed websites, optimized their performance, and contributed
+              to the development of a digital menu system.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <div class="content">
+            <div class="year">2022 - 2030</div>
+            <h4>Hospital General "Dr. Manuel Velasco Suárez"</h4>
+            <h5 class="job">Intern</h5>
+            <p>
+              I migrated databases to a new Laravel platform and maintained the
+              integrated medical-administrative management system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @reference './../styles/global.css';
+
+  .timeline-column {
+    @apply flex-[1_1_320px];
+  }
+
+  .title {
+    @apply text-xl mt-8 mr-0 mb-4 ml-[30px] text-center font-bold;
+  }
+
+  .timeline-column .title:after,
+  .timeline-column .title:before {
+    @apply w-0 h-0;
+    content: "";
+  }
+
+  .timeline-column .timeline-box {
+    @apply border-l-[3px] border-solid border-secondary;
+  }
+
+  .timeline-box .timeline-content {
+    @apply relative pl-7;
+  }
+
+  .timeline-box .timeline-content::before {
+    @apply absolute top-0 left-[-10.5px] size-5 bg-primary rounded-full;
+    content: "";
+  }
+
+  .timeline-content .content {
+    @apply p-6 border-2 border-solid border-primary rounded-lg mb-8;
+  }
+  .timeline-content .content .year {
+    @apply text-secondary text-[14px] font-semibold;
+  }
+
+  .timeline-content .content h4 {
+    @apply text-xl font-bold my-1 mx-0 text-textPrimary text-pretty;
+  }
+
+  .timeline-content .content h5 {
+    @apply text-base font-bold my-2 mx-0 text-accent2 text-pretty;
+  }
+
+  .timeline-content .content .job {
+    @apply mt-[-5px];
+  }
+
+  .timeline-content .content p {
+    @apply text-base text-textPrimary text-balance;
+  }
+</style>
