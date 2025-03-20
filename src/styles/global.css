@@ -14,6 +14,7 @@
   --color-accent2: #ed02ba;
 
   --color-header: #ffffff81;
+  --color-borderPrimary: #c5c5e6;
 
   /* Tipografía */
   --font-heading: "Inter", sans-serif;
@@ -46,6 +47,7 @@
   --color-accent2: #fd12ca;
 
   --color-header: rgba(26, 26, 46, 0.7);
+  --color-borderPrimary: #1a1a33;
 }
 
 html {
