@@ -9,7 +9,9 @@
       "@layouts/*": ["src/layouts/*"],
       "@lib/*": ["src/lib/*"],
       "@styles/*": ["src/styles/*"],
-      "@config/*": ["src/config/*"]
+      "@config/*": ["src/config/*"],
+      "@types/*": ["src/types/*"],
+      "@data/*": ["src/data/*"]
     }
   }
 }

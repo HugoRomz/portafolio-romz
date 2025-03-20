@@ -1,22 +1,24 @@
 ---
+import type { Technology } from "@data/technologies";
+
 const { project } = Astro.props;
 ---
 
 <article class="card relative">
   <div class="card-content">
     <figure
-      class="card-image size-80 rounded-t-3xl border-8 border-b-0 border-borderPrimary overflow-hidden relative"
+      class="card-image h-80 w-full rounded-t-3xl border-8 border-b-0 border-borderPrimary overflow-hidden relative"
     >
       <img
-        src={project.imagenes[0]}
-        class="size-full object-cover"
+        src={project.images[0]}
+        class="w-full h-full object-cover"
         alt="Project Image"
       />
       <div
         class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-12 px-2 pb-2"
       >
         <p class="card-description text-white text-base text-wrap">
-          {project.descripcion}
+          {project.description}
         </p>
       </div>
     </figure>
@@ -27,7 +29,7 @@ const { project } = Astro.props;
     <h2
       class="card-title border-borderPrimary border-8 text-nowrap overflow-hidden overflow-ellipsis rounded-2xl text-base px-2 w-60 font-bold text-center"
     >
-      {project.nombre}
+      {project.name}
     </h2>
   </header>
   <div class="curve-one"></div>
@@ -36,9 +38,16 @@ const { project } = Astro.props;
     class="card-tags flex px-2 pt-3 gap-2 bg-header border-x-8 border-borderPrimary overflow-hidden overflow-x-auto"
   >
     {
-      project.tecnologias.map((tecnologia: any[]) => (
-        <span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
-          {tecnologia}
+      project.techDetails.map((techDetail: Technology) => (
+        <span
+          class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset"
+          style={{
+            backgroundColor: techDetail.bgColor,
+            color: techDetail.textColor,
+            borderColor: techDetail.ringColor,
+          }}
+        >
+          {techDetail.name}
         </span>
       ))
     }
@@ -47,7 +56,7 @@ const { project } = Astro.props;
     class="card-footer h-20 border-x-8 bg-header border-b-8 rounded-b-3xl border-borderPrimary flex justify-between items-center px-4"
   >
     <a
-      href={project.url}
+      href={project.demoUrl}
       target="_blank"
       class="bg-background text-textPrimary font-medium py-2 px-4 rounded-lg border border-borderPrimary transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-accent hover:border-transparent hover:to-primary hover:text-textPrimary cursor-pointer hover:border-0 flex items-center gap-2"
     >
