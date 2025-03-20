@@ -52,8 +52,6 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              console.log("adding class");
-
               item.classList.add("after:scale-x-100");
             } else {
               item.classList.remove("after:scale-x-100");

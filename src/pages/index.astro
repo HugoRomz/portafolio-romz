@@ -23,15 +23,23 @@ import Briefcase from "@components/icons/Briefcase.astro";
         <Briefcase class="size-8" />
         Experiencie
       </TitleSection>
-      <AboutSection />
-    </SectionContainer>
-
-    <SectionContainer id="projects">
       <ExperienceSection />
     </SectionContainer>
 
-    <SectionContainer id="about">
+    <SectionContainer id="projects">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        Projects
+      </TitleSection>
       <ProjectsSection />
+    </SectionContainer>
+
+    <SectionContainer id="about">
+      <TitleSection>
+        <Briefcase class="size-8" />
+        About
+      </TitleSection>
+      <AboutSection />
     </SectionContainer>
   </div>
 </Layout>

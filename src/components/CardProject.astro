@@ -1,0 +1,132 @@
+---
+const { project } = Astro.props;
+---
+
+<article class="card relative">
+  <div class="card-content">
+    <figure
+      class="card-image size-80 rounded-t-3xl border-8 border-b-0 border-borderPrimary overflow-hidden relative"
+    >
+      <img
+        src={project.imagenes[0]}
+        class="size-full object-cover"
+        alt="Project Image"
+      />
+      <div
+        class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-12 px-2 pb-2"
+      >
+        <p class="card-description text-white text-base text-wrap">
+          {project.descripcion}
+        </p>
+      </div>
+    </figure>
+  </div>
+  <header
+    class="card-header w-60 h-14 flex justify-center items-center absolute top-0 right-0 bg-background border-b-8 border-l-8 border-borderPrimary rounded-l-lg p-[0.3rem]"
+  >
+    <h2
+      class="card-title border-borderPrimary border-8 text-nowrap overflow-hidden overflow-ellipsis rounded-2xl text-base px-2 w-60 font-bold text-center"
+    >
+      {project.nombre}
+    </h2>
+  </header>
+  <div class="curve-one"></div>
+  <div class="curve-two"></div>
+  <div
+    class="card-tags flex px-2 pt-3 gap-2 bg-header border-x-8 border-borderPrimary overflow-hidden overflow-x-auto"
+  >
+    {
+      project.tecnologias.map((tecnologia: any[]) => (
+        <span class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset">
+          {tecnologia}
+        </span>
+      ))
+    }
+  </div>
+  <footer
+    class="card-footer h-20 border-x-8 bg-header border-b-8 rounded-b-3xl border-borderPrimary flex justify-between items-center px-4"
+  >
+    <a
+      href={project.url}
+      target="_blank"
+      class="bg-background text-textPrimary font-medium py-2 px-4 rounded-lg border border-borderPrimary transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-accent hover:border-transparent hover:to-primary hover:text-textPrimary cursor-pointer hover:border-0 flex items-center gap-2"
+    >
+      Preview
+      <span class="ml-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
+        >
+      </span>
+    </a>
+    <button
+      type="button"
+      class="bg-transparent text-textPrimary font-medium py-2 px-4 rounded-lg border-2 border-borderPrimary hover:border-primary cursor-pointer"
+    >
+      Open
+    </button>
+  </footer>
+</article>
+
+<style>
+  .card-header::after {
+    width: 1.125rem;
+    height: 1.125rem;
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: -1.125rem;
+    border-top-right-radius: 0.8rem;
+    box-shadow: 0.375rem -0.375rem var(--color-background);
+  }
+
+  .card-header::before {
+    width: 1.125rem;
+    height: 1.25rem;
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    left: -1.625rem;
+    top: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0.375rem -0.375rem var(--color-borderPrimary);
+  }
+
+  .curve-one,
+  .curve-two {
+    width: 1.25rem;
+    height: 1.25rem;
+    content: "";
+    position: absolute;
+  }
+
+  .curve-one {
+    background-color: transparent;
+    top: 12.7%;
+    right: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0.375rem -0.375rem var(--color-borderPrimary);
+  }
+
+  .curve-two {
+    background-color: transparent;
+    top: 11%;
+    right: 0;
+    border-top-right-radius: 0.8rem;
+    box-shadow: 0.375rem -0.375rem var(--color-background);
+  }
+
+  .card-tags::-webkit-scrollbar {
+    display: none; /* ✅ Ocultar scrollbar en navegadores Webkit */
+  }
+</style>
