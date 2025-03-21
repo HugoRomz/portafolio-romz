@@ -1,0 +1,40 @@
+---
+import type { Technology } from "@data/technologies";
+import Badge from "@components/Badge.astro";
+import { technologies } from "@data/technologies";
+import Image from "astro/components/Image.astro";
+
+// Props desde el componente padre
+const { title, skills, gridClasses } = Astro.props;
+
+// Filtra las tecnologías que coinciden con las skills recibidas
+const skillTechs = skills
+  .map((skill: any) => technologies.find((tech) => tech.id === skill))
+  .filter(Boolean) as Technology[];
+---
+
+<div
+  class={`${gridClasses} p-6 rounded-2xl flex flex-col bg-header items-center border-2 border-borderPrimary shadow-header`}
+>
+  <h3 class="text-2xl font-bold mb-4 text-textPrimary/70">{title}</h3>
+
+  <div class="flex flex-wrap gap-2 justify-center">
+    {
+      skillTechs.map((tech) => (
+        <div
+          class={`inline-flex items-center px-3 py-1 gap-x-1 rounded-full text-sm font-medium`}
+          style=`background-color: ${tech.bgColor} !important; color: ${tech.textColor} !important; border: 1px solid ${tech.ringColor} !important;`
+        >
+            <Image
+                src={tech.logo}
+                alt={tech.name}
+                class="w-4 h-4"
+            />
+            <span>{tech.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+

@@ -17,8 +17,10 @@ const { project } = Astro.props;
       <div
         class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-12 px-2 pb-2"
       >
-        <p class="card-description text-white text-base text-wrap">
-          {project.description}
+        <p
+          class="card-description text-gray-100 text-base h-24 text-pretty overflow-hidden overflow-ellipsis"
+        >
+          {project.descriptionShort}
         </p>
       </div>
     </figure>

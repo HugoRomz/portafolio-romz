@@ -1,0 +1,50 @@
+---
+import Skillcard from "./Skillcard.astro";
+---
+
+<div
+  class="grid grid-cols-1 md:grid-cols-5 grid-rows-6 gap-4 md:p-6 min-h-screen"
+>
+  <Skillcard
+    title="Frontend"
+    skills={["js", "html", "css", "primevue", "tailwind", "astro", "bootstrap"]}
+    gridClasses="col-span-1 md:col-span-3 md:row-span-3"
+  />
+
+  <Skillcard
+    title="Backend"
+    skills={["php", "java", "node", "express", "fastapi", "spring"]}
+    gridClasses="col-span-1 md:col-span-2 md:row-span-3 md:col-start-4"
+  />
+
+  <Skillcard
+    title="Tools"
+    skills={[
+      "github",
+      "git",
+      "postman",
+      "vercel",
+      "figma",
+      "vscode",
+      "trello",
+      "swagger",
+      "vite",
+    ]}
+    gridClasses="col-span-1 md:col-span-2 md:row-span-3 md:row-start-4"
+  />
+
+  <Skillcard
+    title="Others"
+    skills={[
+      "postgresql",
+      "mysql",
+      "mongodb",
+      "sequelize",
+      "jwt",
+      "wordpress",
+      "c",
+      "swift",
+    ]}
+    gridClasses="col-span-1 md:col-span-3 md:row-span-3 md:col-start-3 md:row-start-4"
+  />
+</div>
