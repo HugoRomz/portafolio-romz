@@ -1,7 +1,10 @@
 ---
+import Image from "astro/components/Image.astro";
 import Download from "./icons/Download.astro";
 import Github from "./icons/Github.astro";
 import Linkenid from "./icons/Linkenid.astro";
+
+import Avatar from "@assets/1706375079269.webp";
 ---
 
 <div
@@ -24,8 +27,8 @@ import Linkenid from "./icons/Linkenid.astro";
           class="absolute left-0 bottom-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
         >
         </div>
-        <img
-          src="https://fastly.picsum.photos/id/270/500/600.jpg?hmac=sXkzSpS4csp5c30p4plTV0lcb0FjZh4vzKnx0pduBMo"
+        <Image
+          src={Avatar}
           alt="Rafael"
           class="my-10 max-w-[70%] duration-300 origin-center rotate-[4.5deg] border-2 border-primary rounded-[38px] hover:rotate-0 hover:border-accent2"
         />
@@ -36,17 +39,31 @@ import Linkenid from "./icons/Linkenid.astro";
         error suscipit nobis cum ex odit quos, enim consectetur nihil quia.
       </p>
       <div class="flex items-center gap-5 flex-wrap">
-        <button class="btn__outline">
+        <a
+          href="data/cv_merida.pdf"
+          download="cv-hugo-rosales.pdf"
+          class="btn__outline"
+        >
           Download CV
           <Download />
-        </button>
+        </a>
         <div class="flex items-center gap-5">
-          <div class="social__icons">
+          <a
+            href="https://linkedin.com/in/hugorosme"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social__icons"
+          >
             <Linkenid />
-          </div>
-          <div class="social__icons">
+          </a>
+          <a
+            href="https://github.com/HugoRomz"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social__icons"
+          >
             <Github />
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -55,8 +72,8 @@ import Linkenid from "./icons/Linkenid.astro";
         class="absolute left-0 bottom-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
       >
       </div>
-      <img
-        src="https://fastly.picsum.photos/id/270/500/600.jpg?hmac=sXkzSpS4csp5c30p4plTV0lcb0FjZh4vzKnx0pduBMo"
+      <Image
+        src={Avatar}
         alt="Rafael"
         class="mb-7 mt-3 max-w-[80%] md:max-w-[90%] duration-300 origin-center rotate-[4.5deg] border-2 border-primary rounded-[38px] hover:rotate-0 hover:border-accent2"
       />
