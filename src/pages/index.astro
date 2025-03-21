@@ -8,6 +8,9 @@ import SectionContainer from "@components/SectionContainer.astro";
 import TitleSection from "@components/TitleSection.astro";
 import Briefcase from "@components/icons/Briefcase.astro";
 import Skills from "@components/Skills.astro";
+import Project from "@components/icons/Project.astro";
+import SkillsIcon from "@components/icons/Skills.astro";
+import About from "@components/icons/About.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,7 +21,7 @@ import Skills from "@components/Skills.astro";
     <HeroSection />
     <slot />
   </SectionContainer>
-  <div class="space-y-24">
+  <div class="space-y-14">
     <SectionContainer id="experience">
       <TitleSection>
         <Briefcase class="size-8" />
@@ -29,14 +32,14 @@ import Skills from "@components/Skills.astro";
 
     <SectionContainer id="projects">
       <TitleSection>
-        <Briefcase class="size-8" />
+        <Project class="size-8" />
         Projects
       </TitleSection>
       <ProjectsSection />
     </SectionContainer>
     <SectionContainer id="skills">
       <TitleSection>
-        <Briefcase class="size-8" />
+        <SkillsIcon class="size-8" />
         Skills
       </TitleSection>
       <Skills />
@@ -44,7 +47,7 @@ import Skills from "@components/Skills.astro";
 
     <SectionContainer id="about">
       <TitleSection>
-        <Briefcase class="size-8" />
+        <About class="size-8" />
         About
       </TitleSection>
       <AboutSection />
