@@ -3,25 +3,20 @@
 
 // Definimos los datos dinámicos
 const userData = {
-  title: "A Lead UX & UI designer based in Canada",
+  title: "A Software Developer building modern web applications",
   description: `
-    I <span class="text-primary font-semibold">design and develop</span>
-    services for customers of all sizes, specializing in creating stylish, modern
-    websites, web services and online stores. My passion is to design digital user
-    experiences through the bold interface and meaningful interactions.
+    I <span class="text-primary font-semibold">design and develop</span> web applications, constantly exploring new 
+technologies to enhance my skills and tackle new challenges. Each project is an opportunity for professional growth. I strive to contribute to digital projects and drive company success through my technical expertise and personal abilities.
   `,
   info: {
     column1: [
-      { label: "Birthday", value: "4th April 1998" },
-      { label: "Age", value: "22 Yr" },
-      { label: "Residence", value: "Canada" },
-      { label: "Address", value: "Toronto" },
+      { label: "Location", value: "Mérida, Yucatán" },
+      { label: "Freelance", value: "Available" },
+      { label: "Email", value: "rafael.rosales1405@gmail.com" },
     ],
     column2: [
-      { label: "Email", value: "hello@example.com" },
-      { label: "Phone", value: "+1 234 567 890" },
-      { label: "Freelance", value: "Available" },
-      { label: "LinkedIn", value: "@yourprofile" },
+      { label: "LinkedIn", value: "@hugorosme" },
+      { label: "Phone", value: "+52 962 170 5041" },
     ],
   },
 };
@@ -38,38 +33,52 @@ const userData = {
     set:html={userData.description}
   />
 
-  <!-- Información dinámica en dos columnas -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg max-w-2xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 text-lg max-w-2xl mx-auto">
     <!-- Columna 1 -->
-    <div class="text-left">
+    <div class="text-center md:text-left">
       {
         userData.info.column1.map((item) => (
-          <div class="grid grid-cols-6 grid-rows-1 ">
-            <div class="col-span-2  text-right mr-2 text-accent2 font-semibold">
-              {item.label}
+          <>
+            {/* Version phone */}
+            <div class="md:hidden">
+              <div class="text-accent2 font-semibold">{item.label}</div>
+              <div class="text-textPrimary/80">{item.value}</div>
             </div>
-            <div class="col-start-3 ">|</div>
-            <div class="col-span-3 col-start-4 text-textPrimary/80">
-              {item.value}
+
+            <div class="hidden md:grid grid-cols-6 items-center">
+              <div class="col-span-2 text-right mr-2 text-accent2 font-semibold">
+                {item.label}
+              </div>
+              <div class="col-start-3">|</div>
+              <div class="col-span-3 col-start-4 text-textPrimary/80">
+                {item.value}
+              </div>
             </div>
-          </div>
+          </>
         ))
       }
     </div>
 
     <!-- Columna 2 -->
-    <div class="text-left">
+    <div class="text-center md:text-left">
       {
         userData.info.column2.map((item) => (
-          <div class="grid grid-cols-6 grid-rows-1 ">
-            <div class="col-span-2 text-right mr-2 text-accent2 font-semibold">
-              {item.label}
+          <>
+            {/* Version phone */}
+            <div class="md:hidden">
+              <div class="text-accent2 font-semibold">{item.label}</div>
+              <div class="text-textPrimary/80">{item.value}</div>
             </div>
-            <div class="col-start-3 ">|</div>
-            <div class="col-span-3 col-start-4 text-textPrimary/80 ">
-              {item.value}
+            <div class="hidden md:grid grid-cols-6 items-center">
+              <div class="col-span-2 text-right mr-2 text-accent2 font-semibold">
+                {item.label}
+              </div>
+              <div class="col-start-3">|</div>
+              <div class="col-span-3 col-start-4 text-textPrimary/80">
+                {item.value}
+              </div>
             </div>
-          </div>
+          </>
         ))
       }
     </div>

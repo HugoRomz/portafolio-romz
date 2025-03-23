@@ -1,64 +1,76 @@
+---
+const education = [
+  {
+    year: "2019 - 2024",
+    title: "Licenciatura en Ingeniería en Desarrollo y Tecnologías de Software",
+    subtitle: "Universidad Autónoma de Chiapas",
+  },
+  {
+    year: "2016 - 2019",
+    title: "Profesional Técnico en Informática",
+    subtitle: "Colegio Nacional de Educación Profesional Técnica",
+  },
+];
+
+const experiences = [
+  {
+    year: "2024",
+    title: "Universidad Autónoma de Chiapas",
+    job: "Thesis Project",
+    description:
+      "I developed an Information System for managing the Thesis Seminar using the PEVN stack, applying business rules and documenting the project.",
+  },
+  {
+    year: "2023",
+    title: "Volcana Agencia Digital",
+    job: "Intern",
+    description:
+      "I managed websites, optimized their performance, and contributed to the development of a digital menu system.",
+  },
+  {
+    year: "2022",
+    title: `Hospital General "Dr. Manuel Velasco Suárez"`,
+    job: "Intern",
+    description:
+      "I migrated databases to a new Laravel platform and maintained the integrated medical-administrative management system.",
+  },
+];
+---
+
 <div class="flex justify-center px-0 min-h-svh">
   <div class="flex gap-x-32 flex-wrap">
     <div class="timeline-column">
       <h2 class="title">Education</h2>
       <div class="timeline-box">
-        <div class="timeline-content">
-          <div class="content">
-            <div class="year">2019 - 2024</div>
-            <h4>
-              Licenciatura en Ingeniería en Desarrollo y Tecnologías de Software
-            </h4>
-            <h5>Universidad Autónoma de Chiapas</h5>
-          </div>
-        </div>
-        <div class="timeline-content">
-          <div class="content">
-            <div class="year">2016 - 2019</div>
-            <h4>Profesional Técnico en Informática</h4>
-            <h5>Colegio Nacional de Educación Profesional Técnica</h5>
-          </div>
-        </div>
+        {
+          education.map((item) => (
+            <div class="timeline-content">
+              <div class="content">
+                <div class="year">{item.year}</div>
+                <h4>{item.title}</h4>
+                <h5>{item.subtitle}</h5>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
+
     <div class="timeline-column">
       <h2 class="title">Experience</h2>
       <div class="timeline-box">
-        <div class="timeline-content">
-          <div class="content">
-            <div class="year">2024</div>
-            <h4>Universidad Autónoma de Chiapas</h4>
-            <h5 class="job">Thesis Project</h5>
-            <p>
-              I developed an Information System for managing the Thesis Seminar
-              using the PEVN stack, applying business rules and documenting the
-              project.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-content">
-          <div class="content">
-            <div class="year">2023</div>
-            <h4>Volcana Agencia Digital</h4>
-            <h5 class="job">Intern</h5>
-            <p>
-              I managed websites, optimized their performance, and contributed
-              to the development of a digital menu system.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-content">
-          <div class="content">
-            <div class="year">2022</div>
-            <h4>Hospital General "Dr. Manuel Velasco Suárez"</h4>
-            <h5 class="job">Intern</h5>
-            <p>
-              I migrated databases to a new Laravel platform and maintained the
-              integrated medical-administrative management system.
-            </p>
-          </div>
-        </div>
+        {
+          experiences.map((item) => (
+            <div class="timeline-content">
+              <div class="content">
+                <div class="year">{item.year}</div>
+                <h4>{item.title}</h4>
+                <h5 class="job">{item.job}</h5>
+                <p>{item.description}</p>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>

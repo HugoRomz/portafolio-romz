@@ -5,21 +5,35 @@ import Github from "./icons/Github.astro";
 import Linkenid from "./icons/Linkenid.astro";
 
 import Avatar from "@assets/1706375079269.webp";
+const myData = {
+  title: "I am Rafael Rosales",
+  degree: "Software Engineer",
+  description: `
+    Software developer with experience in designing and developing web
+    applications, constantly exploring new technologies to enhance my skills
+    and tackle new challenges.
+  `,
+  cv: "data/cv_merida.pdf",
+  social: [
+    { name: "LinkedIn", url: "https://linkedin.com/in/hugorosme" },
+    { name: "GitHub", url: "https://github.com/HugoRomz" },
+  ],
+};
 ---
 
 <div
-  class="absolute right-[-15%] top-[-10%] lg:top-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
+  class="absolute lg:right-[-15%] lg:top-0 size-80 bg-primary mix-blend-screen rounded-full blur-[150px] opacity-50"
 >
 </div>
 
 <div class="container">
   <div class="flex items-center gap-5">
     <div class="space-y-2 md:w-2/3">
-      <h3 class="text-xl font-bold">I am Rafael Rosales</h3>
+      <h3 class="text-xl font-bold">{myData.title}</h3>
       <h1>
         <span
           class="text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-primary to-accent2 inline-block text-transparent bg-clip-text pb-2"
-          >Software Engineer
+          >{myData.degree}
         </span>
       </h1>
       <div class="relative flex justify-center md:hidden">
@@ -34,22 +48,16 @@ import Avatar from "@assets/1706375079269.webp";
         />
       </div>
       <p class="max-w-xl text-lg pb-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo nostrum
-        odio dignissimos magni minima nisi reprehenderit officia tempora saepe,
-        error suscipit nobis cum ex odit quos, enim consectetur nihil quia.
+        {myData.description}
       </p>
       <div class="flex items-center gap-5 flex-wrap">
-        <a
-          href="data/cv_merida.pdf"
-          download="cv-hugo-rosales.pdf"
-          class="btn__outline"
-        >
+        <a href={myData.cv} download="cv-hugo-rosales.pdf" class="btn__outline">
           Download CV
           <Download />
         </a>
         <div class="flex items-center gap-5">
           <a
-            href="https://linkedin.com/in/hugorosme"
+            href={myData.social[0].url}
             target="_blank"
             rel="noopener noreferrer"
             class="social__icons"
@@ -57,7 +65,7 @@ import Avatar from "@assets/1706375079269.webp";
             <Linkenid />
           </a>
           <a
-            href="https://github.com/HugoRomz"
+            href={myData.social[1].url}
             target="_blank"
             rel="noopener noreferrer"
             class="social__icons"
