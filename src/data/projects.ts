@@ -31,7 +31,7 @@ export const projects: Project[] = [
     status: "active",
     githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     demoUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
-    features: ["", ""],
+    features: ["hola", "hola"],
     images: [
       "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
       "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-auth-registro-2025-03-19-23_23_02_zozv6l.png",

@@ -18,6 +18,7 @@ const { project } = Astro.props;
         class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-12 px-2 pb-2"
       >
         <p
+          transition:name=`description-${project.description}`
           class="card-description text-gray-100 text-base h-24 text-pretty overflow-hidden overflow-ellipsis"
         >
           {project.descriptionShort}
@@ -29,6 +30,7 @@ const { project } = Astro.props;
     class="card-header w-60 h-14 flex justify-center items-center absolute top-0 right-0 bg-background border-b-8 border-l-8 border-borderPrimary rounded-l-lg p-[0.3rem]"
   >
     <h2
+      transition:name=`title-${project.id}`
       class="card-title border-borderPrimary border-8 text-nowrap overflow-hidden overflow-ellipsis rounded-2xl text-base px-2 w-60 font-bold text-center"
     >
       {project.name}
@@ -79,12 +81,12 @@ const { project } = Astro.props;
         >
       </span>
     </a>
-    <button
-      type="button"
+    <a
+      href={`/project/${project.id}`}
       class="bg-transparent text-textPrimary font-medium py-2 px-4 rounded-lg border-2 border-borderPrimary hover:border-primary cursor-pointer"
     >
       Open
-    </button>
+    </a>
   </footer>
 </article>
 
