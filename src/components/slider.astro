@@ -1,0 +1,25 @@
+---
+const { images } = Astro.props;
+
+console.log(images);
+---
+
+<div class="slider-wrapper bg-accent2">
+  <div class="image-list">
+    {images.map((image: any) => <img class="image-item" src={image} alt="" />)}
+  </div>
+</div>
+
+<style>
+  .slider-wrapper .image-list {
+    display: grid;
+    gap: 18px;
+    overflow-x: auto;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .slider-wrapper .image-list .image-item {
+    width: 400px;
+    height: 325px;
+    object-fit: cover;
+  }
+</style>

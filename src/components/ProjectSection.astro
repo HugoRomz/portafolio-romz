@@ -1,9 +1,8 @@
 ---
-import { api } from "@config/api";
 import CardProject from "./CardProject.astro";
-import { getProjectsWithTech } from "src/utils/projects";
+import { getProjectsCardWithTech } from "src/utils/projects";
 
-const projects = getProjectsWithTech();
+const projects = getProjectsCardWithTech();
 
 const limit = 3;
 ---

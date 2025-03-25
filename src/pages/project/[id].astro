@@ -1,0 +1,76 @@
+---
+import SectionContainer from "@components/SectionContainer.astro";
+import Slider from "@components/slider.astro";
+import { projects } from "@data/projects";
+import Layout from "@layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import { getProjectWithTech } from "src/utils/projects";
+
+// Define las rutas estáticas para cada proyecto
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { id: project.id },
+  }));
+}
+
+const { id } = Astro.params;
+const project = getProjectWithTech(id);
+console.log(project);
+---
+
+<Layout title="">
+  <div class="pt-24 pb-16 md:py-36">
+    <SectionContainer>
+      <div class="space-y-4">
+        <h1 transition:name=`title-${project.id}`  class="text-3xl lg:text-4xl font-semibold">{project.name}</h1>
+      <p class="text-base text-textPrimary/80 text-pretty" transition:name=`description-${project.description}`>{project.description}</p>
+      <div class="flex flex-wrap gap-2">
+        {
+          project.techDetails.map((tech) => (
+            <div
+              class={`inline-flex items-center px-3 py-1 gap-x-1 rounded-full text-sm font-medium`}
+              style=`background-color: ${tech.bgColor} !important; color: ${tech.textColor} !important; border: 1px solid ${tech.ringColor} !important;`
+            >
+                <Image
+                    src={tech.logo}
+                    alt={tech.name}
+                    class="w-4 h-4"
+                />
+                <span>{tech.name}</span>
+            </div>
+          ))
+        }
+        
+      </div>
+      <Slider images={project.images} />
+      <h2>Caracteristicas</h2>
+      <ul>
+        {project.features.map((feature) => <li>{feature}</li>)}
+      </ul>
+      <!-- 3 botones -->
+
+        <div class="flex flex-row gap-4">
+            <a
+            href={project.githubUrl}
+            class="bg-accent2 text-white px-4 py-2 rounded-md"
+            >
+            GitHub
+            </a>
+            <a
+            href={project.demoUrl}
+            class="bg-accent2 text-white px-4 py-2 rounded-md"
+            >
+            Demo
+            </a>
+           <!-- Regreesar -->
+            <a
+            href="/"
+            class="bg-accent2 text-white px-4 py-2 rounded-md"
+            >
+            Regresar
+            </a>
+        </div>
+      </div>
+    </SectionContainer>
+  </div>
+</Layout>

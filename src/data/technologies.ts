@@ -31,6 +31,7 @@ import springLogo from "@assets/spring.svg";
 import swaggerLogo from "@assets/swagger.svg";
 import viteLogo from "@assets/vitejs.svg";
 import vscodeLogo from "@assets/vscode.svg";
+import stack from "@assets/stack.svg";
 
 export interface Technology {
   id: string;
@@ -229,7 +230,7 @@ export const technologies: Technology[] = [
   {
     id: "stack-pevn",
     name: "PEVN",
-    logo: "", // Sin logo
+    logo: stack, // Sin logo
     bgColor: "#F3F4F6", // bg-gray-50
     textColor: "#374151", // text-gray-700
     ringColor: "#9CA3AF", // ring-gray-400
