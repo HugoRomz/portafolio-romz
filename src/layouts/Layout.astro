@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from "astro:transitions";
+// import { ClientRouter } from "astro:transitions"; --> NO LOGRO HACER QUE FUNCIONE CON BIEN EL TOGLE Y SLIDER POR CULPA DE MANIPULACION DEL DOOM DE VIEW TRANSITION :C
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/global.css";
@@ -14,7 +14,6 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <ClientRouter />
   </head>
   <body>
     <Header />

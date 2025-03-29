@@ -7,7 +7,11 @@ export interface Project {
   status: "active" | "archived";
   githubUrl?: string;
   demoUrl?: string;
-  features: string[];
+  features: (string | { title: string; description: string })[];
+  programFunctionality: (
+    | string
+    | { title: string; description: string; icon: string }
+  )[];
   images: string[];
 }
 
@@ -31,16 +35,63 @@ export const projects: Project[] = [
     status: "active",
     githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     demoUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
-    features: ["hola", "hola"],
+    features: [
+      {
+        title: "Responsive Design",
+        description:
+          "Fully responsive layout that works on all devices, from mobile to desktop.",
+      },
+      {
+        title: "Modern Architecture",
+        description:
+          "Built with the latest technologies and best practices for optimal performance.",
+      },
+      {
+        title: "User Authentication",
+        description:
+          "Secure login and registration system with role-based access control.",
+      },
+      {
+        title: "Real-time Updates",
+        description:
+          "Live data updates without page refreshes for a seamless user experience.",
+      },
+    ],
+    programFunctionality: [
+      {
+        title: "Sales Analytics",
+        description:
+          "Visualize real-time sales data with interactive charts and customizable reports to identify trends and opportunities.",
+        icon: "📊",
+      },
+      {
+        title: "Inventory Management",
+        description:
+          "Control product stock, receive low inventory alerts, and manage supplier orders from a centralized interface.",
+        icon: "📦",
+      },
+      {
+        title: "Customer Profiles",
+        description:
+          "Access detailed customer profiles with purchase history, preferences, and behavior to improve personalization.",
+        icon: "👤",
+      },
+      {
+        title: "Marketing Automation",
+        description:
+          "Schedule and monitor email marketing campaigns, personalized offers, and promotions based on customer behavior.",
+        icon: "📱",
+      },
+    ],
     images: [
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-auth-registro-2025-03-19-23_23_02_zozv6l.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449111/Portafolio/Projects/SIGEST/screencapture-localhost-5173-2025-03-19-23_14_51_dkwel7.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449113/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-usuarios-2025-03-19-23_20_27_f0h0wc.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449113/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-seminarios-2025-03-19-23_15_38_atg98w.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449112/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-documentacionDocentes-2025-03-19-23_34_23_j16p5o.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742504310/Portafolio/Projects/SIGEST/DiagramaSeminario_1_bsqzuh.png",
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-docentes-documentacion-2025-03-19-23_34_44_g7y69b.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-auth-registro-2025-03-19-23_23_02_zozv6l.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449111/Portafolio/Projects/SIGEST/screencapture-localhost-5173-2025-03-19-23_14_51_dkwel7.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449113/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-usuarios-2025-03-19-23_20_27_f0h0wc.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449113/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-seminarios-2025-03-19-23_15_38_atg98w.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449112/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-documentacionDocentes-2025-03-19-23_34_23_j16p5o.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742504310/Portafolio/Projects/SIGEST/DiagramaSeminario_1_bsqzuh.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-docentes-documentacion-2025-03-19-23_34_44_g7y69b.png",
     ],
   },
   {
@@ -54,7 +105,54 @@ export const projects: Project[] = [
     status: "active",
     githubUrl: "",
     demoUrl: "",
-    features: ["Dark mode"],
+    features: [
+      {
+        title: "Responsive Design",
+        description:
+          "Fully responsive layout that works on all devices, from mobile to desktop.",
+      },
+      {
+        title: "Modern Architecture",
+        description:
+          "Built with the latest technologies and best practices for optimal performance.",
+      },
+      {
+        title: "User Authentication",
+        description:
+          "Secure login and registration system with role-based access control.",
+      },
+      {
+        title: "Real-time Updates",
+        description:
+          "Live data updates without page refreshes for a seamless user experience.",
+      },
+    ],
+    programFunctionality: [
+      {
+        title: "Sales Analytics",
+        description:
+          "Visualize real-time sales data with interactive charts and customizable reports to identify trends and opportunities.",
+        icon: "📊",
+      },
+      {
+        title: "Inventory Management",
+        description:
+          "Control product stock, receive low inventory alerts, and manage supplier orders from a centralized interface.",
+        icon: "📦",
+      },
+      {
+        title: "Customer Profiles",
+        description:
+          "Access detailed customer profiles with purchase history, preferences, and behavior to improve personalization.",
+        icon: "👤",
+      },
+      {
+        title: "Marketing Automation",
+        description:
+          "Schedule and monitor email marketing campaigns, personalized offers, and promotions based on customer behavior.",
+        icon: "📱",
+      },
+    ],
     images: [
       "https://res.cloudinary.com/dhcer3iwe/image/upload/v1724377012/Portafolio/Prueba/png-transparent-responsive-web-design-web-development-web-template-system-mockup-mobile-app-template-template-electronics-web-design_jn9hma.png",
     ],
@@ -70,7 +168,54 @@ export const projects: Project[] = [
     status: "archived",
     githubUrl: "",
     demoUrl: "",
-    features: ["Dark mode"],
+    features: [
+      {
+        title: "Responsive Design",
+        description:
+          "Fully responsive layout that works on all devices, from mobile to desktop.",
+      },
+      {
+        title: "Modern Architecture",
+        description:
+          "Built with the latest technologies and best practices for optimal performance.",
+      },
+      {
+        title: "User Authentication",
+        description:
+          "Secure login and registration system with role-based access control.",
+      },
+      {
+        title: "Real-time Updates",
+        description:
+          "Live data updates without page refreshes for a seamless user experience.",
+      },
+    ],
+    programFunctionality: [
+      {
+        title: "Sales Analytics",
+        description:
+          "Visualize real-time sales data with interactive charts and customizable reports to identify trends and opportunities.",
+        icon: "📊",
+      },
+      {
+        title: "Inventory Management",
+        description:
+          "Control product stock, receive low inventory alerts, and manage supplier orders from a centralized interface.",
+        icon: "📦",
+      },
+      {
+        title: "Customer Profiles",
+        description:
+          "Access detailed customer profiles with purchase history, preferences, and behavior to improve personalization.",
+        icon: "👤",
+      },
+      {
+        title: "Marketing Automation",
+        description:
+          "Schedule and monitor email marketing campaigns, personalized offers, and promotions based on customer behavior.",
+        icon: "📱",
+      },
+    ],
     images: [
       "https://res.cloudinary.com/dhcer3iwe/image/upload/v1724377012/Portafolio/Prueba/png-transparent-responsive-web-design-web-development-web-template-system-mockup-mobile-app-template-template-electronics-web-design_jn9hma.png",
     ],
