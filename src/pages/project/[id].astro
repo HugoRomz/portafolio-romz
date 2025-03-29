@@ -15,16 +15,37 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params;
 const project = getProjectWithTech(id);
-console.log(project);
 ---
 
-<Layout title="">
+<Layout title=`Proyecto - ${project.name}`>
   <div class="pt-24 pb-16 md:py-36">
     <SectionContainer>
       <div class="space-y-4">
-        <h1 transition:name=`title-${project.id}`  class="text-3xl lg:text-4xl font-semibold">{project.name}</h1>
-      <p class="text-base text-textPrimary/80 text-pretty" transition:name=`description-${project.description}`>{project.description}</p>
-      <div class="flex flex-wrap gap-2">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
+          <div class="flex items-start gap-4 ">
+            <h1 class="text-2xl md:text-3xl font-bold text-textPrimary uppercase">{project.name}</h1>
+            {project.status === 'active' ? (
+                <span class="inline-flex items-center rounded-md bg-green-50 px-1.5 py-0.5 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset capitalize">{project.status}</span>
+             
+            ) : (
+            <span class="inline-flex items-center rounded-md bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset capitalize">{project.status}</span>
+            )}
+          </div>
+
+           <a
+           href="/"
+           class=" w-fit bg-transparent hover:bg-primary text-textPrimary font-semibold py-2 px-4 border border-textPrimary/50 transition rounded duration-300 ease-in-out flex flex-row items-center"
+           >
+           <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+           Regresar
+           </a>
+          
+          </div>
+        </div>
+
+
+      <!-- BADGES -->
+      <div class="flex flex-wrap gap-2 mb-8">
         {
           project.techDetails.map((tech) => (
             <div
@@ -40,36 +61,67 @@ console.log(project);
             </div>
           ))
         }
-        
       </div>
-      <Slider images={project.images} />
-      <h2>Caracteristicas</h2>
-      <ul>
-        {project.features.map((feature) => <li>{feature}</li>)}
-      </ul>
-      <!-- 3 botones -->
-
-        <div class="flex flex-row gap-4">
-            <a
-            href={project.githubUrl}
-            class="bg-accent2 text-white px-4 py-2 rounded-md"
-            >
-            GitHub
-            </a>
-            <a
-            href={project.demoUrl}
-            class="bg-accent2 text-white px-4 py-2 rounded-md"
-            >
-            Demo
-            </a>
-           <!-- Regreesar -->
-            <a
-            href="/"
-            class="bg-accent2 text-white px-4 py-2 rounded-md"
-            >
-            Regresar
-            </a>
+      <!-- TERMINA BADGES -->
+      <p class="text-base text-textPrimary/80 text-pretty mb-8" >{project.description}</p>
+         <!-- BOTONES -->
+         <div class="flex flex-col sm:flex-row gap-3 mb-10">
+          <a href={project.demoUrl} class="py-3 px-4 inline-flex items-center gap-x-2 text-base font-medium rounded-lg border border-transparent bg-textPrimary text-background hover:bg-textPrimary/90 ">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-external-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>
+            View Demo
+          </a>
+          <a href={project.githubUrl}  class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-borderPrimary text-textPrimary/90 hover:border-accent2 hover:text-accent2 ">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
+            View Code
+          </a>
         </div>
+
+
+
+      <!-- SLIDER -->
+      <div class="mb-10">
+      <Slider images={project.images} />
+      </div>
+
+ <!-- FUNCIONALES -->
+      <div class="mb-10">
+        <h2 class="text-xl font-semibold text-textPrimary mb-4">¿Qué hace este programa?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.programFunctionality.map((item, index) => (
+            <div
+              class="rounded-lg p-4 hover:shadow-md transition-shadow border-l-4 border border-borderPrimary"
+            >
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">{item.icon}</div>
+                <div>
+                  <h3 class="font-medium text-textPrimary mb-2">{item.title}</h3>
+                  <p class="text-textPrimary/80 text-sm">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+      <!-- CARACTERISTICAS -->
+       <div class="">
+        <h2 class="text-xl font-semibold text-textPrimary mb-4">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {project.features.map((feature) => (
+            <div
+              class="border border-borderPrimary rounded-lg p-4 hover:shadow-sm transition-shadow bg-background"
+            >
+              <h3 class="font-semibold text-textPrimary mb-2">{feature.title}</h3>
+              <p class=" text-textPrimary/90 text-sm">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+
+     
+   
       </div>
     </SectionContainer>
   </div>
