@@ -9,9 +9,10 @@ export function getProjectsCardWithTech(): Array<{
     id: project.id,
     name: project.name,
     description: project.description,
+    descriptionShort: project.descriptionShort,
     githubUrl: project.githubUrl,
     demoUrl: project.demoUrl,
-    images: project.images,
+    cover: project.cover,
     techDetails: project.technologies.map(
       (techId) => technologies.find((tech) => tech.id === techId)!,
     ),

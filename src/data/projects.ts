@@ -12,17 +12,18 @@ export interface Project {
     | string
     | { title: string; description: string; icon: string }
   )[];
+  cover: string;
   images: string[];
 }
 
 export const projects: Project[] = [
   {
-    id: "proyecto-1",
+    id: "sigest",
     name: "UNACH - SIGEST",
     description:
-      "Sistema centralizado para optimizar la gestión de seminarios y proyectos de titulación universitaria. Permite administrar cursos, asignar docentes, supervisar tesis y facilitar la colaboración entre estudiantes y asesores. Los usuarios interactúan según su rol: los administradores configuran los periodos y validan inscripciones; los docentes evalúan, comparten recursos y guían proyectos; los alumnos y egresados suben avances, reciben calificaciones y agendan asesorías. Integra seguimiento en tiempo real, seguridad robusta y adaptabilidad a los flujos institucionales, eliminando redundancias y garantizando la transparencia en los procesos de titulación.",
+      "The SIGEST system is a comprehensive platform for university graduation. It allows applicants to register, submit documents, and track their acceptance process; enables students to access their dashboard, consult the curriculum map, manage teams, and upload theses or projects; allows teachers to manage modules, assign grades, schedule advisory sessions, and validate documents; and lets administrators and super administrators manage catalogs, courses, users, and roles, ensuring a smooth, transparent, and efficient workflow at every stage.",
     descriptionShort:
-      "Sistema integral para la gestión del seminario de titulación: módulos de cursos, periodos, usuarios, docentes, roles, etc.",
+      "A comprehensive platform to manage seminars and graduation projects, optimizing registration, evaluation, and academic supervision.",
     technologies: [
       "primevue",
       "vue",
@@ -37,52 +38,56 @@ export const projects: Project[] = [
     demoUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     features: [
       {
-        title: "Responsive Design",
-        description:
-          "Fully responsive layout that works on all devices, from mobile to desktop.",
+        title: "Applicant Management",
+        description: "Registration, document upload, and enrollment tracking.",
       },
       {
-        title: "Modern Architecture",
+        title: "Academic Management",
         description:
-          "Built with the latest technologies and best practices for optimal performance.",
+          "Consultation of curriculum maps, grades, and teacher assignments.",
       },
       {
-        title: "User Authentication",
+        title: "Team and Project Management",
         description:
-          "Secure login and registration system with role-based access control.",
+          "Creation and oversight of theses and graduation projects.",
       },
       {
-        title: "Real-time Updates",
+        title: "Teacher Management",
         description:
-          "Live data updates without page refreshes for a seamless user experience.",
+          "Module oversight, grading, advisory sessions, and document management.",
+      },
+      {
+        title: "System Administration",
+        description:
+          "Management of users, courses, catalogs, roles, and evidences.",
       },
     ],
     programFunctionality: [
       {
-        title: "Sales Analytics",
+        title: "Applicant Registration and Tracking",
         description:
-          "Visualize real-time sales data with interactive charts and customizable reports to identify trends and opportunities.",
-        icon: "📊",
+          "Pre-registration, document submission, and enrollment approval.",
+        icon: "📝",
       },
       {
-        title: "Inventory Management",
+        title: "Academic Management",
         description:
-          "Control product stock, receive low inventory alerts, and manage supplier orders from a centralized interface.",
-        icon: "📦",
+          "Consultation of subjects, teachers, grades, and advisory sessions.",
+        icon: "📚",
       },
       {
-        title: "Customer Profiles",
-        description:
-          "Access detailed customer profiles with purchase history, preferences, and behavior to improve personalization.",
-        icon: "👤",
+        title: "Team Management",
+        description: "Creation, management, and tracking of thesis teams.",
+        icon: "👥",
       },
       {
-        title: "Marketing Automation",
-        description:
-          "Schedule and monitor email marketing campaigns, personalized offers, and promotions based on customer behavior.",
-        icon: "📱",
+        title: "System Administration",
+        description: "Configuration of users, roles, courses, and evidences.",
+        icon: "⚙️",
       },
     ],
+    cover:
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
     images: [
       "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
       "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-auth-registro-2025-03-19-23_23_02_zozv6l.png",
@@ -95,129 +100,94 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "proyecto-2",
-    name: "App de tareas",
+    id: "ramirez-window-cleaning",
+    name: "Ramirez Window Cleaning",
     description:
-      "Aplicación web para gestionar tareas, con categorías, fechas de vencimiento y recordatorios.",
+      "Landing page developed for a window cleaning business that clearly and attractively details the services offered by a young and entrepreneurial team. The platform highlights the quality, professionalism, and reliability of the service, and includes visual examples of completed work, facilitating quote requests and estimates.",
     descriptionShort:
-      "Aplicación web para gestionar tareas, con categorías, fechas de vencimiento y recordatorios.",
-    technologies: ["js", "react"],
+      "Landing page developed for a window cleaning business that clearly and attractively details the offered services.",
+    technologies: ["astro", "tailwind", "html", "css", "js"],
     status: "active",
-    githubUrl: "",
-    demoUrl: "",
+    githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
+    demoUrl: "https://ramirezwindowcleaning.com/",
     features: [
       {
+        title: "Professional Services",
+        description: "Clearly and directly presents the cleaning services.",
+      },
+      {
+        title: "Modern Design",
+        description: "Clean, modern interface that captures attention.",
+      },
+      {
+        title: "Photo Gallery",
+        description: "Interactive display of high-resolution images.",
+      },
+      {
         title: "Responsive Design",
-        description:
-          "Fully responsive layout that works on all devices, from mobile to desktop.",
-      },
-      {
-        title: "Modern Architecture",
-        description:
-          "Built with the latest technologies and best practices for optimal performance.",
-      },
-      {
-        title: "User Authentication",
-        description:
-          "Secure login and registration system with role-based access control.",
-      },
-      {
-        title: "Real-time Updates",
-        description:
-          "Live data updates without page refreshes for a seamless user experience.",
+        description: "Optimized for mobile and desktop devices.",
       },
     ],
     programFunctionality: [
       {
-        title: "Sales Analytics",
-        description:
-          "Visualize real-time sales data with interactive charts and customizable reports to identify trends and opportunities.",
-        icon: "📊",
+        title: "Service Quotation",
+        description: "Facilitates contact and the request for estimates.",
+        icon: "💬",
       },
       {
-        title: "Inventory Management",
-        description:
-          "Control product stock, receive low inventory alerts, and manage supplier orders from a centralized interface.",
-        icon: "📦",
-      },
-      {
-        title: "Customer Profiles",
-        description:
-          "Access detailed customer profiles with purchase history, preferences, and behavior to improve personalization.",
-        icon: "👤",
-      },
-      {
-        title: "Marketing Automation",
-        description:
-          "Schedule and monitor email marketing campaigns, personalized offers, and promotions based on customer behavior.",
-        icon: "📱",
+        title: "Project Gallery",
+        description: "Displays examples of completed work.",
+        icon: "🖼️",
       },
     ],
+    cover:
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1743466643/Portafolio/Projects/ramirezWebsite/711shots_so_sen2yi.webp",
     images: [
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1724377012/Portafolio/Prueba/png-transparent-responsive-web-design-web-development-web-template-system-mockup-mobile-app-template-template-electronics-web-design_jn9hma.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1743466643/Portafolio/Projects/ramirezWebsite/711shots_so_sen2yi.webp",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1743466644/Portafolio/Projects/ramirezWebsite/822shots_so_wjphov.webp",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1743466645/Portafolio/Projects/ramirezWebsite/745shots_so_rwzdro.webp",
     ],
   },
   {
-    id: "proyecto-3",
-    name: "App de recetas",
+    id: "maximiliano",
+    name: "Baby Gallery",
     description:
-      "Aplicación web para buscar y guardar recetas de cocina, con filtros y favoritos.",
+      "Landing page designed to showcase a gallery of photos and details about a baby, capturing unique moments and providing an immersive visual experience. The platform stands out for its attractive, minimalist design, making it easy to access personal information and special details, and adapts perfectly to any device.",
     descriptionShort:
-      "Aplicación web para buscar y guardar recetas de cocina, con filtros y favoritos.",
-    technologies: ["js", "react", "node"],
-    status: "archived",
-    githubUrl: "",
-    demoUrl: "",
+      "Landing page designed to showcase a gallery of photos and details about a baby, capturing unique moments and providing a visual experience.",
+    technologies: ["astro", "tailwind", "html", "css", "js"],
+    status: "active",
+    githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
+    demoUrl: "https://www.maximiliano.website/",
     features: [
       {
+        title: "Photo Gallery",
+        description: "Interactive display of high-resolution images.",
+      },
+      {
         title: "Responsive Design",
-        description:
-          "Fully responsive layout that works on all devices, from mobile to desktop.",
-      },
-      {
-        title: "Modern Architecture",
-        description:
-          "Built with the latest technologies and best practices for optimal performance.",
-      },
-      {
-        title: "User Authentication",
-        description:
-          "Secure login and registration system with role-based access control.",
-      },
-      {
-        title: "Real-time Updates",
-        description:
-          "Live data updates without page refreshes for a seamless user experience.",
+        description: "Optimized for mobile and desktop devices.",
       },
     ],
     programFunctionality: [
       {
-        title: "Sales Analytics",
-        description:
-          "Visualize real-time sales data with interactive charts and customizable reports to identify trends and opportunities.",
-        icon: "📊",
+        title: "Photo Viewing",
+        description: "Allows users to explore a gallery of baby images.",
+        icon: "🖼️",
       },
       {
-        title: "Inventory Management",
+        title: "Personal Information",
         description:
-          "Control product stock, receive low inventory alerts, and manage supplier orders from a centralized interface.",
-        icon: "📦",
-      },
-      {
-        title: "Customer Profiles",
-        description:
-          "Access detailed customer profiles with purchase history, preferences, and behavior to improve personalization.",
-        icon: "👤",
-      },
-      {
-        title: "Marketing Automation",
-        description:
-          "Schedule and monitor email marketing campaigns, personalized offers, and promotions based on customer behavior.",
-        icon: "📱",
+          "Displays relevant data and interesting facts about the baby.",
+        icon: "ℹ️",
       },
     ],
+    cover:
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1743466944/Portafolio/Projects/websiteMax/41shots_so_ssyujm.webp",
     images: [
-      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1724377012/Portafolio/Prueba/png-transparent-responsive-web-design-web-development-web-template-system-mockup-mobile-app-template-template-electronics-web-design_jn9hma.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1743466944/Portafolio/Projects/websiteMax/41shots_so_ssyujm.webp",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1743466945/Portafolio/Projects/websiteMax/430shots_so_wsmuon.webp",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1743468160/Portafolio/Projects/websiteMax/647shots_so_re95mk.webp",
     ],
   },
 ];

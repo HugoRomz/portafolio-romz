@@ -101,7 +101,7 @@ export const technologies: Technology[] = [
   },
   {
     id: "tailwind",
-    name: "Tailwind CSS",
+    name: "Tailwind",
     logo: tailwindLogo,
     bgColor: "#CCFBF1", // bg-teal-50
     textColor: "#0D9488", // text-teal-800
