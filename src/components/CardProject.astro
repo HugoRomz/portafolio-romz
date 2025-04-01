@@ -10,7 +10,7 @@ const { project } = Astro.props;
       class="card-image h-80 w-full rounded-t-3xl border-8 border-b-0 border-borderPrimary overflow-hidden relative"
     >
       <img
-        src={project.images[0]}
+        src={project.cover}
         class="w-full h-full object-cover"
         alt="Project Image"
       />
@@ -44,7 +44,7 @@ const { project } = Astro.props;
     {
       project.techDetails.map((techDetail: Technology) => (
         <span
-          class="inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset"
+          class="inline-flex items-center rounded-md px-2 w-fit py-1 text-xs font-medium ring-1 ring-inset"
           style={{
             backgroundColor: techDetail.bgColor,
             color: techDetail.textColor,
