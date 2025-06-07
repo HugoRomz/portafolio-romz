@@ -17,9 +17,7 @@ const skillTechs = skills
   class={`${gridClasses} card`}
 >
    <h3 class="text-xl font-bold text-textPrimary mb-6 flex items-center gap-2">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#00d4ff">
-        <path d="M12,2L2,7V17L12,22L22,17V7L12,2M12,4.44L19.55,9L12,13.56L4.45,9L12,4.44M4,10.81L11,15.24V19.82L4,15.39V10.81M20,10.81V15.39L13,19.82V15.24L20,10.81Z"/>
-    </svg>
+    <slot name="icon" />
     {title}
 </h3>
 

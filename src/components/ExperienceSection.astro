@@ -45,7 +45,7 @@ const experiences = [
         {
           education.map((item) => (
             <div class="timeline-content">
-              <div class="content">
+              <div class="content card">
                 <div class="year">{item.year}</div>
                 <h4>{item.title}</h4>
                 <h5>{item.subtitle}</h5>
@@ -62,7 +62,7 @@ const experiences = [
         {
           experiences.map((item) => (
             <div class="timeline-content">
-              <div class="content">
+              <div class="content card">
                 <div class="year">{item.year}</div>
                 <h4>{item.title}</h4>
                 <h5 class="job">{item.job}</h5>
@@ -93,24 +93,31 @@ const experiences = [
     content: "";
   }
 
+  /* Linea */
   .timeline-column .timeline-box {
-    @apply border-l-[3px] border-solid border-secondary;
+    border-image: linear-gradient(180deg, #00d4ff, #7c3aed, #f59e0b) 1;
+    @apply border-l-[3px] border-solid;
   }
 
   .timeline-box .timeline-content {
     @apply relative pl-7;
   }
 
+  /* Este es el punto */
   .timeline-box .timeline-content::before {
-    @apply absolute top-0 left-[-10.5px] size-5 bg-primary rounded-full;
+    border: 3px solid rgba(0, 212, 255, 0.6);
+    background: #00d4ff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    @apply absolute top-0 left-[-10.5px] size-5;
     content: "";
   }
 
   .timeline-content .content {
-    @apply p-6 border-2 border-solid border-primary rounded-lg mb-8;
+    @apply p-6 border-2 border-solid  rounded-lg mb-8;
   }
   .timeline-content .content .year {
-    @apply text-secondary text-[14px] font-semibold;
+    @apply inline-block text-white text-sm font-bold bg-linear-to-r from-[#7c3aed] to-[#a855f7] rounded-full px-2 py-1 mb-2;
   }
 
   .timeline-content .content h4 {
@@ -118,7 +125,7 @@ const experiences = [
   }
 
   .timeline-content .content h5 {
-    @apply text-base font-bold my-2 mx-0 text-accent2 text-pretty;
+    @apply text-base font-bold my-2 mx-0 text-[#00d4ff] text-pretty;
   }
 
   .timeline-content .content .job {
@@ -126,6 +133,6 @@ const experiences = [
   }
 
   .timeline-content .content p {
-    @apply text-base text-textPrimary text-balance;
+    @apply text-base text-textPrimary text-balance opacity-90;
   }
 </style>

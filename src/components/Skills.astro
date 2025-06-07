@@ -1,19 +1,37 @@
 ---
 import Skillcard from "./Skillcard.astro";
+
+import BackendIcon from "./icons/BackendIcon.astro";
+import FrontendIcon from "./icons/FrontendIcon.astro";
+import ToolsIcon from "./icons/ToolsIcon.astro";
+import OtherIcon from "./icons/OtherIcon.astro";
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:p-6">
   <Skillcard
     title="Frontend"
-    skills={["js", "html", "css", "primevue", "tailwind", "astro", "bootstrap"]}
+    skills={[
+      "js",
+      "html",
+      "css",
+      "primevue",
+      "tailwind",
+      "astro",
+      "bootstrap",
+      "vue",
+    ]}
     gridClasses="col-span-1 md:col-span-3 "
-  />
+  >
+    <FrontendIcon class="text-primary" slot="icon" />
+  </Skillcard>
 
   <Skillcard
     title="Backend"
     skills={["php", "java", "node", "express", "fastapi", "spring"]}
     gridClasses="col-span-1 md:col-span-2  md:col-start-4"
-  />
+  >
+    <BackendIcon class="text-primary" slot="icon" />
+  </Skillcard>
 
   <Skillcard
     title="Tools"
@@ -29,7 +47,9 @@ import Skillcard from "./Skillcard.astro";
       "vite",
     ]}
     gridClasses="col-span-1 md:col-span-2  "
-  />
+  >
+    <ToolsIcon class="text-primary" slot="icon" />
+  </Skillcard>
 
   <Skillcard
     title="Others"
@@ -44,5 +64,7 @@ import Skillcard from "./Skillcard.astro";
       "swift",
     ]}
     gridClasses="col-span-1 md:col-span-3 md:col-start-3 "
-  />
+  >
+    <OtherIcon class="text-primary" slot="icon" />
+  </Skillcard>
 </div>
