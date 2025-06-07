@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   descriptionShort?: string;
   technologies: string[];
-  status: "active" | "archived";
+  status: "active" | "archived" | "completed";
   githubUrl?: string;
   demoUrl?: string;
   features: (string | { title: string; description: string })[];
@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "express",
       "sequelize",
     ],
-    status: "active",
+    status: "completed",
     githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     demoUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     features: [
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     descriptionShort:
       "Landing page developed for a window cleaning business that clearly and attractively details the offered services.",
     technologies: ["astro", "tailwind", "html", "css", "js"],
-    status: "active",
+    status: "completed",
     githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     demoUrl: "https://ramirezwindowcleaning.com/",
     features: [
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     descriptionShort:
       "Landing page designed to showcase a gallery of photos and details about a baby, capturing unique moments and providing a visual experience.",
     technologies: ["astro", "tailwind", "html", "css", "js"],
-    status: "active",
+    status: "completed",
     githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
     demoUrl: "https://www.maximiliano.website/",
     features: [

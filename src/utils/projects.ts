@@ -9,6 +9,7 @@ export function getProjectsCardWithTech(): Array<{
     id: project.id,
     name: project.name,
     description: project.description,
+    status: project.status,
     descriptionShort: project.descriptionShort,
     githubUrl: project.githubUrl,
     demoUrl: project.demoUrl,

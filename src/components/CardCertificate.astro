@@ -1,0 +1,122 @@
+---
+import type { Technology } from "@data/technologies";
+
+const { certificate } = Astro.props;
+---
+
+<article class="card">
+  <div class="certificate-card">
+    <div
+      class="certificate-header p-8 flex items-center justify-between relative"
+    >
+      <div class="certificate-icon text-4xl z-[1] relative">☁️</div>
+      <div
+        class="certificate-date bg-[#0000004d] text-white py-2 px-4 rounded-3xl text-base font-bold backdrop-blur-md z-[1] relative"
+      >
+        {certificate.date}
+      </div>
+    </div>
+    <div class="certificate-body">
+      <div class="certificate-content p-4">
+        <h3 class="certificate-title text-xl font-bold mb-2 text-primary">
+          {certificate.name}
+        </h3>
+        <div
+          class="certificate-issuer text-white/90 mb-6 text-lg font-semibold"
+        >
+          {certificate.issuer}
+        </div>
+        <p class="certificate-description text-white/80 mb-6 text-base">
+          {certificate.description}
+        </p>
+        <div class="certificate-skills flex flex-wrap gap-2 mb-8">
+          {
+            certificate.techDetails.map((techDetail: Technology) => (
+              <span
+                class="inline-flex items-center rounded-md px-2 w-fit py-1 text-xs font-medium ring-1 ring-inset backdrop-blur-lg"
+                style={{
+                  backgroundColor: techDetail.bgColor,
+                  color: techDetail.textColor,
+                  borderColor: techDetail.ringColor,
+                }}
+              >
+                {techDetail.name}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="certificate-footer p-4 pt-0">
+      <div class="certificate-actions flex gap-4 mb-4">
+        <a
+          href={certificate.url}
+          target="_blank"
+          class="certificate-btn primary"
+        >
+          <span class="">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
+            >
+          </span>Preview</a
+        >
+      </div>
+      <div class="certificate-id text-sm text-gray-500 text-center opacity-70">
+        ID: {certificate.id}
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  @reference './../styles/global.css';
+
+  .certificate-card {
+    @apply flex flex-col h-full;
+  }
+
+  .certificate-body {
+    @apply flex flex-col flex-1;
+  }
+
+  .certificate-content {
+    @apply flex-1;
+  }
+
+  .certificate-footer {
+    @apply mt-auto;
+  }
+
+  .certificate-header {
+    background: linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.8),
+      rgba(217, 119, 6, 0.8)
+    );
+  }
+
+  .certificate-btn {
+    @apply flex-1 bg-[#ffffff1a] text-white p-2 rounded-2xl text-center font-semibold transition-all duration-200 ease-in backdrop-blur-md flex justify-center gap-2;
+  }
+
+  .certificate-btn:hover {
+    @apply bg-[#f59e0b33] transform translate-y-0.5;
+  }
+
+  .certificate-btn.primary {
+    @apply bg-linear-to-r from-[#f59e0b] to-[#d97706];
+  }
+  .certificate-btn.primary:hover {
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+  }
+</style>

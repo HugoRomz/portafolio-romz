@@ -4,142 +4,91 @@ import type { Technology } from "@data/technologies";
 const { project } = Astro.props;
 ---
 
-<article class="card relative">
-  <div class="card-content">
-    <figure
-      class="card-image h-80 w-full rounded-t-3xl border-8 border-b-0 border-borderPrimary overflow-hidden relative"
-    >
-      <img
-        src={project.cover}
-        class="w-full h-full object-cover"
-        alt="Project Image"
-      />
-      <div
-        class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-12 px-2 pb-2"
-      >
-        <p
-          transition:name=`description-${project.description}`
-          class="card-description text-gray-100 text-base h-24 text-pretty overflow-hidden overflow-ellipsis"
-        >
-          {project.descriptionShort}
-        </p>
-      </div>
-    </figure>
-  </div>
-  <header
-    class="card-header w-60 h-14 flex justify-center items-center absolute top-0 right-0 bg-background border-b-8 border-l-8 border-borderPrimary rounded-l-lg p-[0.3rem]"
-  >
-    <h2
-      transition:name=`title-${project.id}`
-      class="card-title border-borderPrimary border-8 text-nowrap overflow-hidden overflow-ellipsis rounded-2xl text-base px-2 w-60 font-bold text-center"
-    >
-      {project.name}
-    </h2>
-  </header>
-  <div class="curve-one"></div>
-  <div class="curve-two"></div>
+<article class="card">
   <div
-    class="card-tags flex px-2 pt-3 gap-2 bg-header border-x-8 border-borderPrimary overflow-hidden overflow-x-auto"
+    class="project-image w-full h-52 relative overflow-hidden flex items-center justify-center"
   >
-    {
-      project.techDetails.map((techDetail: Technology) => (
-        <span
-          class="inline-flex items-center rounded-md px-2 w-fit py-1 text-xs font-medium ring-1 ring-inset"
-          style={{
-            backgroundColor: techDetail.bgColor,
-            color: techDetail.textColor,
-            borderColor: techDetail.ringColor,
-          }}
-        >
-          {techDetail.name}
-        </span>
-      ))
-    }
+    <img
+      class="absolute w-full object-cover"
+      src={project.cover}
+      alt={project.title}
+    />
+    <div class="absolute inset-0 bg-linear-to-r from-primary/15 to-accent/15">
+    </div>
   </div>
-  <footer
-    class="card-footer h-20 border-x-8 bg-header border-b-8 rounded-b-3xl border-borderPrimary flex justify-between items-center px-4"
-  >
-    <a
-      href={project.demoUrl}
-      target="_blank"
-      class="bg-background text-textPrimary font-medium py-2 px-4 rounded-lg border border-borderPrimary transition duration-300 ease-in-out transform hover:scale-105 hover:bg-gradient-to-r hover:from-accent hover:border-transparent hover:to-primary hover:text-textPrimary cursor-pointer hover:border-0 flex items-center gap-2"
+  <div class="project-content p-4">
+    <div class="project-header flex items-center justify-between mb-4">
+      <h3 class="project-title text-xl font-bold text-primary m-0">
+        {project.name}
+      </h3>
+      <div
+        class={`project-status py-1.5 px-4 rounded-3xl text-sm font-semibold backdrop-blur-lg ` +
+          (project.status === "completed"
+            ? "bg-[rgba(34,197,94,0.3)] text-[#4ade80]"
+            : "bg-[rgba(251,191,36,0.3)] text-[#facc15]")}
+      >
+        {project.status}
+      </div>
+    </div>
+    <p
+      class="project-description text-textPrimary opacity-90 mb-6 text-base text-balance"
     >
-      Preview
-      <span class="ml-1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="size-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-            d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
-        >
-      </span>
-    </a>
-    <a
-      href={`/project/${project.id}`}
-      class="bg-transparent text-textPrimary font-medium py-2 px-4 rounded-lg border-2 border-borderPrimary hover:border-primary cursor-pointer"
-    >
-      Open
-    </a>
-  </footer>
+      {project.descriptionShort}
+    </p>
+    <div class="project-tech flex flex-wrap gap-2 mb-4">
+      {
+        project.techDetails.map((techDetail: Technology) => (
+          <span
+            class="inline-flex items-center rounded-md px-2 w-fit py-1 text-xs font-medium ring-1 ring-inset backdrop-blur-lg"
+            style={{
+              backgroundColor: techDetail.bgColor,
+              color: techDetail.textColor,
+              borderColor: techDetail.ringColor,
+            }}
+          >
+            {techDetail.name}
+          </span>
+        ))
+      }
+    </div>
+    <div class="project-actions flex gap-4 mb-4">
+      <a href={project.demoUrl} target="_blank" class="project-btn primary">
+        <span class="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up-right"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
+          >
+        </span>Preview</a
+      >
+      <a href={`/project/${project.id}`} class="project-btn">Open</a>
+    </div>
+  </div>
 </article>
 
 <style>
-  .card-header::after {
-    width: 1.125rem;
-    height: 1.125rem;
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    top: 0;
-    left: -1.125rem;
-    border-top-right-radius: 0.8rem;
-    box-shadow: 0.375rem -0.375rem var(--color-background);
+  @reference './../styles/global.css';
+
+  .project-btn {
+    @apply flex-1 bg-[#ffffff1a] text-white p-2 rounded-2xl text-center font-semibold transition-all duration-200 ease-in backdrop-blur-md flex justify-center gap-2;
   }
 
-  .card-header::before {
-    width: 1.125rem;
-    height: 1.25rem;
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    left: -1.625rem;
-    top: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    box-shadow: 0.375rem -0.375rem var(--color-borderPrimary);
+  .project-btn:hover {
+    @apply bg-[#00d4ff33] transform translate-y-0.5;
   }
 
-  .curve-one,
-  .curve-two {
-    width: 1.25rem;
-    height: 1.25rem;
-    content: "";
-    position: absolute;
+  .project-btn.primary {
+    @apply bg-linear-to-r from-primary to-secondary;
   }
-
-  .curve-one {
-    background-color: transparent;
-    top: 12.7%;
-    right: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    box-shadow: 0.375rem -0.375rem var(--color-borderPrimary);
-  }
-
-  .curve-two {
-    background-color: transparent;
-    top: 11%;
-    right: 0;
-    border-top-right-radius: 0.8rem;
-    box-shadow: 0.375rem -0.375rem var(--color-background);
-  }
-
-  .card-tags::-webkit-scrollbar {
-    display: none; /* ✅ Ocultar scrollbar en navegadores Webkit */
+  .project-btn.primary:hover {
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
   }
 </style>
