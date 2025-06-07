@@ -6,12 +6,16 @@ import ExperienceSection from "@components/ExperienceSection.astro";
 import ProjectsSection from "@components/ProjectSection.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitleSection from "@components/TitleSection.astro";
-import Briefcase from "@components/icons/Briefcase.astro";
 import Skills from "@components/Skills.astro";
-import Project from "@components/icons/Project.astro";
-import SkillsIcon from "@components/icons/Skills.astro";
-import About from "@components/icons/About.astro";
+
 import CertificatesSection from "@components/CertificatesSection.astro";
+import {
+  BriefcaseBusiness,
+  FileCode,
+  Lightbulb,
+  MonitorSmartphone,
+  User,
+} from "@lucide/astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -25,7 +29,7 @@ import CertificatesSection from "@components/CertificatesSection.astro";
   <div class="space-y-10 lg:space-y-24">
     <SectionContainer id="experience">
       <TitleSection>
-        <Briefcase class="size-8" />
+        <BriefcaseBusiness class="size-8" />
         Experiencie
       </TitleSection>
       <ExperienceSection />
@@ -33,14 +37,14 @@ import CertificatesSection from "@components/CertificatesSection.astro";
 
     <SectionContainer id="projects">
       <TitleSection>
-        <Project class="size-8" />
+        <MonitorSmartphone class="size-8" />
         Projects
       </TitleSection>
       <ProjectsSection />
     </SectionContainer>
     <SectionContainer id="skills">
       <TitleSection>
-        <SkillsIcon class="size-8" />
+        <Lightbulb class="size-8" />
         Skills
       </TitleSection>
       <Skills />
@@ -48,7 +52,7 @@ import CertificatesSection from "@components/CertificatesSection.astro";
 
     <SectionContainer id="about">
       <TitleSection>
-        <About class="size-8" />
+        <User class="size-8" />
         About Me
       </TitleSection>
       <AboutSection />
@@ -56,7 +60,7 @@ import CertificatesSection from "@components/CertificatesSection.astro";
 
     <SectionContainer id="certificates">
       <TitleSection>
-        <Project class="size-8" />
+        <FileCode class="size-8" />
         Certificates
       </TitleSection>
       <CertificatesSection />

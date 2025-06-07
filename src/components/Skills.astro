@@ -1,10 +1,8 @@
 ---
 import Skillcard from "./Skillcard.astro";
-
 import BackendIcon from "./icons/BackendIcon.astro";
 import FrontendIcon from "./icons/FrontendIcon.astro";
-import ToolsIcon from "./icons/ToolsIcon.astro";
-import OtherIcon from "./icons/OtherIcon.astro";
+import { Asterisk, Wrench } from "@lucide/astro";
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:p-6">
@@ -48,7 +46,7 @@ import OtherIcon from "./icons/OtherIcon.astro";
     ]}
     gridClasses="col-span-1 md:col-span-2  "
   >
-    <ToolsIcon class="text-primary" slot="icon" />
+    <Wrench class="text-primary" slot="icon" />
   </Skillcard>
 
   <Skillcard
@@ -65,6 +63,6 @@ import OtherIcon from "./icons/OtherIcon.astro";
     ]}
     gridClasses="col-span-1 md:col-span-3 md:col-start-3 "
   >
-    <OtherIcon class="text-primary" slot="icon" />
+    <Asterisk class="text-primary" slot="icon" />
   </Skillcard>
 </div>
