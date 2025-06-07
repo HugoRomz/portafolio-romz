@@ -8,6 +8,8 @@
   /* Light Theme */
   --color-textPrimary: #10101e;
   --color-background: #e3e3f2;
+
+  --gradient-bg: linear-gradient(135deg, #f0f0f5 0%, #e3e3f2 50%, #d6d6ea 100%);
   --color-primary: #2abef4;
   --color-secondary: #177a9b;
   --color-accent: #6752ef;
@@ -41,6 +43,7 @@
   /* Dark Theme */
   --color-textPrimary: #e7f5fd;
   --color-background: #0d0d1c;
+  --gradient-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
   --color-primary: #0b9fd5;
   --color-secondary: #64c7e8;
   --color-accent: #2510ad;
@@ -53,6 +56,46 @@
 html {
   font-family: var(--font-heading);
   color: var(--color-textPrimary);
-  background: var(--color-background);
+  background: var(--gradient-bg);
+  min-height: 100vh;
+  background-attachment: fixed;
   font-size: var(--text-base);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.05) 0%,
+    rgba(124, 58, 237, 0.05) 50%,
+    rgba(245, 158, 11, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 212, 255, 0.3);
 }

@@ -1,6 +1,6 @@
 ---
 import type { Technology } from "@data/technologies";
-import Badge from "@components/Badge.astro";
+// import Badge from "@components/Badge.astro";
 import { technologies } from "@data/technologies";
 import Image from "astro/components/Image.astro";
 
@@ -14,15 +14,20 @@ const skillTechs = skills
 ---
 
 <div
-  class={`${gridClasses} p-6 rounded-2xl flex flex-col bg-header items-center border-2 border-borderPrimary shadow-header`}
+  class={`${gridClasses} card`}
 >
-  <h3 class="text-2xl font-bold mb-4 text-textPrimary/70">{title}</h3>
+   <h3 class="text-xl font-bold text-textPrimary mb-6 flex items-center gap-2">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#00d4ff">
+        <path d="M12,2L2,7V17L12,22L22,17V7L12,2M12,4.44L19.55,9L12,13.56L4.45,9L12,4.44M4,10.81L11,15.24V19.82L4,15.39V10.81M20,10.81V15.39L13,19.82V15.24L20,10.81Z"/>
+    </svg>
+    {title}
+</h3>
 
-  <div class="flex flex-wrap gap-2 justify-center">
+  <div class="flex flex-wrap gap-3.5">
     {
       skillTechs.map((tech) => (
         <div
-          class={`inline-flex items-center px-3 py-1 gap-x-1 rounded-full text-sm font-medium`}
+          class={`skill-tag`}
           style=`background-color: ${tech.bgColor} !important; color: ${tech.textColor} !important; border: 1px solid ${tech.ringColor} !important;`
         >
             <Image
@@ -36,5 +41,38 @@ const skillTechs = skills
     }
   </div>
 </div>
+
+
+<style scoped>
+  @reference './../styles/global.css';
+
+  .skill-tag{
+    backdrop-filter: blur(5px);
+ @apply py-2.5 px-4 gap-x-1 inline-flex items-center rounded-xl text-sm font-semibold transition-all duration-300 ease-in relative overflow-hidden cursor-pointer
+  }
+
+  .skill-tag::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .skill-tag:hover::before {
+    @apply left-full
+  }
+
+.skill-tag:hover {
+    transform: translateY(-2px) scale(1.05);
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+</style>
 
 
