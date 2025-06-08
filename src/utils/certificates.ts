@@ -17,3 +17,7 @@ export function getCertificatesCardWithTech(): Array<{
     ),
   }));
 }
+
+export function getTotalCertificatesCount(): number {
+  return certificates.length;
+}

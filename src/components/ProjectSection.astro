@@ -1,12 +1,64 @@
 ---
+import {
+  getTotalProjectsCount,
+  getProjectsCardWithTech,
+} from "src/utils/projects";
 import CardProject from "./CardProject.astro";
-import { getProjectsCardWithTech } from "src/utils/projects";
 
 const projects = getProjectsCardWithTech();
+const LIMIT = getTotalProjectsCount();
 
-const limit = 6;
+const duration = 40;
 ---
 
-<div class="grid gap-4 py-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-  {projects.slice(0, limit).map((project) => <CardProject {project} />)}
+<div class="wrapper">
+  <div class="items-container">
+    {
+      projects.slice(0, LIMIT).map((project, index) => (
+        <div
+          class="item"
+          style={`left: max(calc(270px * ${LIMIT}),100%);animation-delay: ${(duration / LIMIT) * (LIMIT - index) * -1}s`}
+        >
+          <CardProject project={project} />
+        </div>
+      ))
+    }
+  </div>
 </div>
+
+<style>
+  @reference './../styles/global.css';
+  .wrapper {
+    margin-inline: auto;
+    /* mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 5%,
+      rgba(0, 0, 0, 1) 95%,
+      rgba(0, 0, 0, 0)
+    ); */
+    @apply relative  h-[570px] overflow-hidden;
+  }
+
+  .wrapper:hover .item {
+    animation-play-state: paused;
+  }
+
+  @keyframes scrollleft {
+    to {
+      left: -345px;
+    }
+  }
+
+  .items-container {
+    @apply relative;
+  }
+
+  .item {
+    animation-name: scrollleft;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    @apply w-[340px] h-auto absolute;
+  }
+</style>

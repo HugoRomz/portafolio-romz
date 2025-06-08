@@ -100,6 +100,88 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "sigest",
+    name: "UNACH - SIGEST",
+    description:
+      "The SIGEST system is a comprehensive platform for university graduation. It allows applicants to register, submit documents, and track their acceptance process; enables students to access their dashboard, consult the curriculum map, manage teams, and upload theses or projects; allows teachers to manage modules, assign grades, schedule advisory sessions, and validate documents; and lets administrators and super administrators manage catalogs, courses, users, and roles, ensuring a smooth, transparent, and efficient workflow at every stage.",
+    descriptionShort:
+      "A comprehensive platform to manage seminars and graduation projects, optimizing registration, evaluation, and academic supervision.",
+    technologies: [
+      "primevue",
+      "vue",
+      "stack-pevn",
+      "postgresql",
+      "node",
+      "express",
+      "sequelize",
+    ],
+    status: "completed",
+    githubUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
+    demoUrl: "https://github.com/HugoRomz/seminarioapp_backend.git",
+    features: [
+      {
+        title: "Applicant Management",
+        description: "Registration, document upload, and enrollment tracking.",
+      },
+      {
+        title: "Academic Management",
+        description:
+          "Consultation of curriculum maps, grades, and teacher assignments.",
+      },
+      {
+        title: "Team and Project Management",
+        description:
+          "Creation and oversight of theses and graduation projects.",
+      },
+      {
+        title: "Teacher Management",
+        description:
+          "Module oversight, grading, advisory sessions, and document management.",
+      },
+      {
+        title: "System Administration",
+        description:
+          "Management of users, courses, catalogs, roles, and evidences.",
+      },
+    ],
+    programFunctionality: [
+      {
+        title: "Applicant Registration and Tracking",
+        description:
+          "Pre-registration, document submission, and enrollment approval.",
+        icon: "📝",
+      },
+      {
+        title: "Academic Management",
+        description:
+          "Consultation of subjects, teachers, grades, and advisory sessions.",
+        icon: "📚",
+      },
+      {
+        title: "Team Management",
+        description: "Creation, management, and tracking of thesis teams.",
+        icon: "👥",
+      },
+      {
+        title: "System Administration",
+        description: "Configuration of users, roles, courses, and evidences.",
+        icon: "⚙️",
+      },
+    ],
+    cover:
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
+    images: [
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742453422/Portafolio/Projects/SIGEST/540shots_so_v0uwag.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-auth-registro-2025-03-19-23_23_02_zozv6l.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449111/Portafolio/Projects/SIGEST/screencapture-localhost-5173-2025-03-19-23_14_51_dkwel7.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449113/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-usuarios-2025-03-19-23_20_27_f0h0wc.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449113/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-seminarios-2025-03-19-23_15_38_atg98w.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449112/Portafolio/Projects/SIGEST/screencapture-localhost-5173-admin-documentacionDocentes-2025-03-19-23_34_23_j16p5o.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742504310/Portafolio/Projects/SIGEST/DiagramaSeminario_1_bsqzuh.png",
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1742449115/Portafolio/Projects/SIGEST/screencapture-localhost-5173-docentes-documentacion-2025-03-19-23_34_44_g7y69b.png",
+    ],
+  },
+  {
     id: "ramirez-window-cleaning",
     name: "Ramirez Window Cleaning",
     description:

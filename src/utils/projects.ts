@@ -20,6 +20,10 @@ export function getProjectsCardWithTech(): Array<{
   }));
 }
 
+export function getTotalProjectsCount(): number {
+  return projects.length;
+}
+
 export function getProjectWithTech(
   id: string,
 ): Project & { techDetails: Technology[] } {
