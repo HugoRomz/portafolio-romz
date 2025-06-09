@@ -1,6 +1,7 @@
 ---
 import CardProject from "@components/CardProject.astro";
 import Project from "@components/icons/Project.astro";
+import Regresar from "@components/icons/Regresar.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitleSection from "@components/TitleSection.astro";
 import Layout from "@layouts/Layout.astro";
@@ -14,8 +15,17 @@ const projects = getProjectsCardWithTech();
     <SectionContainer>
       <TitleSection>
         <Project class="size-8" />
-        All Projects
+        Todos los proyectos
       </TitleSection>
+      <div class="flex justify-end my-4">
+        <a
+          href="/#projects"
+          class="w-fit bg-transparent hover:bg-primary text-textPrimary font-semibold py-2 px-4 border border-textPrimary/50 transition rounded duration-300 ease-in-out flex flex-row items-center"
+        >
+          <Regresar />
+          Regresar
+        </a>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project) => <CardProject project={project} />)}
       </div>

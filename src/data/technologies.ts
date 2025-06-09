@@ -32,6 +32,7 @@ import swaggerLogo from "@assets/swagger.svg";
 import viteLogo from "@assets/vitejs.svg";
 import vscodeLogo from "@assets/vscode.svg";
 import stack from "@assets/stack.svg";
+import prelineLogo from "@assets/preline.svg";
 
 import supabaseLogo from "@assets/supabase.svg";
 import clerkLogo from "@assets/clerk-light.svg";
@@ -342,5 +343,13 @@ export const technologies: Technology[] = [
     bgColor: "#DBEAFE", // bg-blue-50 (azul Lucide)
     textColor: "#1E40AF", // text-blue-800
     ringColor: "#60A5FA", // ring-blue-400
+  },
+  {
+    id: "preline",
+    name: "Preline",
+    logo: prelineLogo,
+    bgColor: "#EEF2FF", // bg-indigo-50 (más suave y moderno, estilo Preline)
+    textColor: "#4F46E5", // text-indigo-600 (color principal de Preline)
+    ringColor: "#6366F1", // ring-indigo-500 (más vivo, buen contraste)
   },
 ];

@@ -1,4 +1,5 @@
 ---
+import Regresar from "@components/icons/Regresar.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import Slider from "@components/slider.astro";
 import { projects } from "@data/projects";
@@ -24,11 +25,18 @@ const project = getProjectWithTech(id);
         <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
           <div class="flex items-start gap-4 ">
             <h1 class="text-2xl md:text-3xl font-bold text-textPrimary uppercase">{project.name}</h1>
-            {project.status === 'completed' ? (
-                <span class="inline-flex items-center rounded-md bg-green-50 px-1.5 py-0.5 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset capitalize">{project.status}</span>
-             
+            { project.status === 'active' ? (
+              <span class="inline-flex items-center rounded-md bg-green-50 px-1.5 py-0.5 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset capitalize">
+                {project.status}
+              </span>
+            ) : project.status === 'completed' ? (
+              <span class="inline-flex items-center rounded-md bg-blue-50 px-1.5 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-blue-600/20 ring-inset capitalize">
+                {project.status}
+              </span>
             ) : (
-            <span class="inline-flex items-center rounded-md bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset capitalize">{project.status}</span>
+              <span class="inline-flex items-center rounded-md bg-gray-50 px-1.5 py-0.5 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset capitalize">
+                {project.status}
+              </span>
             )}
           </div>
 
@@ -36,7 +44,7 @@ const project = getProjectWithTech(id);
            href="/#projects"
            class=" w-fit bg-transparent hover:bg-primary text-textPrimary font-semibold py-2 px-4 border border-textPrimary/50 transition rounded duration-300 ease-in-out flex flex-row items-center"
            >
-           <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+          <Regresar />
            Regresar
            </a>
           
@@ -72,11 +80,11 @@ const project = getProjectWithTech(id);
          <div class="flex flex-col sm:flex-row gap-3 mb-10">
           <a href={project.demoUrl} target="_blank" class="py-3 px-4 inline-flex items-center gap-x-2 text-base font-medium rounded-lg border border-transparent bg-textPrimary text-background hover:bg-textPrimary/90 ">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-external-link"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /><path d="M11 13l9 -9" /><path d="M15 4h5v5" /></svg>
-            View Demo
+            Ver Demo
           </a>
           <a href={project.githubUrl} target="_blank"  class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-borderPrimary text-textPrimary/90 hover:border-accent2 hover:text-accent2 ">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
-            View Code
+            Ver Código
           </a>
         </div>
 
@@ -110,7 +118,9 @@ const project = getProjectWithTech(id);
 
       <!-- CARACTERISTICAS -->
        <div class="">
-        <h2 class="text-xl font-semibold text-textPrimary mb-4">Key Features</h2>
+        <h2 class="text-xl font-semibold text-textPrimary mb-4">
+          Características del Proyecto
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {project.features.map((feature) => (
             <div

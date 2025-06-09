@@ -6,73 +6,18 @@ import {
 import CardProject from "./CardProject.astro";
 
 const projects = getProjectsCardWithTech();
-const LIMIT = getTotalProjectsCount();
-
-const duration = 40;
+const LIMIT = 3;
 ---
 
-<div class="wrapper">
-  <div class="items-container">
-    {
-      projects.slice(0, LIMIT).map((project, index) => (
-        <div
-          class="item"
-          style={`left: max(calc(270px * ${LIMIT}),100%);animation-delay: ${(duration / LIMIT) * (LIMIT - index) * -1}s`}
-        >
-          <CardProject project={project} />
-        </div>
-      ))
-    }
-  </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {projects.slice(0, LIMIT).map((project) => <CardProject project={project} />)}
 </div>
 
 <div class="flex items-center justify-center mt-4">
   <a
     href="/projects"
-    class="action-btn bg-linear-to-r from-primary to-secondary text-white px-4 py-2 text-center rounded-2xl font-semibold transition-all duration-300 ease-in-out backdrop-blur-md hover:transform hover:translate-y-0.5"
+    class="bg-linear-to-r from-primary to-secondary text-white px-4 py-2 text-center rounded-2xl font-semibold transition-all duration-300 ease-in-out backdrop-blur-md hover:transform hover:translate-y-0.5 hover:shadow-[0_10px_30px] shadow-primary/50"
   >
-    View all projects
+    Ver Todos los Proyectos ({getTotalProjectsCount()})
   </a>
 </div>
-
-<style>
-  @reference './../styles/global.css';
-
-  .action-btn:hover {
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
-  }
-
-  .wrapper {
-    margin-inline: auto;
-    /* mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 5%,
-      rgba(0, 0, 0, 1) 95%,
-      rgba(0, 0, 0, 0)
-    ); */
-    @apply relative  h-[510px] overflow-hidden;
-  }
-
-  .wrapper:hover .item {
-    animation-play-state: paused;
-  }
-
-  @keyframes scrollleft {
-    to {
-      left: -345px;
-    }
-  }
-
-  .items-container {
-    @apply relative;
-  }
-
-  .item {
-    animation-name: scrollleft;
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    @apply w-[340px] h-auto absolute;
-  }
-</style>

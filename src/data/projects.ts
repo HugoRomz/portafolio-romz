@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "supabase",
       "lucide",
       "tailwind",
-      // "preline",
+      "preline",
       "vercel",
     ],
     status: "active",

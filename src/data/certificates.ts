@@ -15,8 +15,8 @@ export const certificates: Certificate[] = [
     issuer: "Alura LATAM",
     description:
       "Este curso abordó los siguientes tópicos: modelaje de la base de datos, creación de la estructura, inclusión, alteración y eliminación de datos, autoincremento, patrones y triggers.",
-    technologies: ["mysql", "sql"],
-    date: "2025-06-01",
+    technologies: ["mysql", "workbench"],
+    date: "2025-05-03",
     url: "https://app.aluracursos.com/certificate/528b8dfb-218a-4929-9785-f30288ec3938",
   },
   {
@@ -26,7 +26,7 @@ export const certificates: Certificate[] = [
     description:
       "Este curso abordó los siguientes tópicos: carrera profesional, rendimiento, motivaciones, valores y demandas del mercado.",
     technologies: ["soft-skills", "career"],
-    date: "2024-12-15",
+    date: "2024-10-01",
     url: "https://app.aluracursos.com/certificate/5689061d-fd76-4352-8886-885983b1e0fe",
   },
   {

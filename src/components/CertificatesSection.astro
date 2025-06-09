@@ -1,12 +1,13 @@
 ---
 import CardCertificate from "./CardCertificate.astro";
 
-import { getCertificatesCardWithTech } from "src/utils/certificates";
+import {
+  getCertificatesCardWithTech,
+  getTotalCertificatesCount,
+} from "src/utils/certificates";
 
 const certificates = getCertificatesCardWithTech();
 const LIMIT = 3;
-
-const duration = 80;
 ---
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -19,50 +20,8 @@ const duration = 80;
 <div class="flex items-center justify-center mt-8">
   <a
     href="/certificates"
-    class="action-btn bg-linear-to-r from-[#f59e0b] to-[#d97706] text-white px-4 py-2 text-center rounded-2xl font-semibold transition-all duration-300 ease-in-out backdrop-blur-md hover:transform hover:translate-y-0.5"
+    class="action-btn bg-linear-to-r from-[#f59e0b] to-[#d97706] text-white px-4 py-2 text-center rounded-2xl font-semibold transition-all duration-300 ease-in-out backdrop-blur-md hover:transform hover:translate-y-0.5 hover:shadow-[0_10px_30px] shadow-accent/50"
   >
-    View all certificates
+    Ver todos los certificados ({getTotalCertificatesCount()})
   </a>
 </div>
-
-<style>
-  @reference './../styles/global.css';
-
-  .action-btn:hover {
-    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
-  }
-
-  .wrapper {
-    margin-inline: auto;
-    /* mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 5%,
-      rgba(0, 0, 0, 1) 95%,
-      rgba(0, 0, 0, 0)
-    ); */
-    @apply relative overflow-hidden;
-  }
-
-  .wrapper:hover .item {
-    animation-play-state: paused;
-  }
-
-  @keyframes scrollleft {
-    to {
-      left: -345px;
-    }
-  }
-
-  .items-container {
-    @apply relative;
-  }
-
-  .item {
-    animation-name: scrollleft;
-    animation-duration: 80s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    @apply w-[345px] h-auto absolute;
-  }
-</style>

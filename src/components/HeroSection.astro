@@ -6,12 +6,10 @@ import Linkenid from "./icons/Linkenid.astro";
 import Avatar from "@assets/1706375079269.webp";
 import Download from "./icons/Download.astro";
 const myData = {
-  title: "I am Rafael Rosales",
+  title: "Hola, soy Rafael Rosales",
   degree: "Software Engineer",
   description: `
-    Software developer with experience in designing and developing web
-    applications, constantly exploring new technologies to enhance my skills
-    and tackle new challenges.
+    Con experiencia en el diseño y desarrollo de aplicaciones web, en constante exploración de nuevas tecnologías para mejorar mis habilidades y enfrentar nuevos retos.
   `,
   cv: "data/cv_merida.pdf",
   social: [
@@ -52,7 +50,7 @@ const myData = {
       </p>
       <div class="flex items-center gap-5 flex-wrap">
         <a href={myData.cv} download="cv-hugo-rosales.pdf" class="btn__outline">
-          Download CV
+          Descargar CV
           <Download />
         </a>
         <div class="flex items-center gap-5">
@@ -93,7 +91,7 @@ const myData = {
   @reference './../styles/global.css';
 
   .btn__outline {
-    @apply inline-flex items-center gap-2 px-4 py-2 text-lg font-semibold text-primary border border-primary rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-linear-to-r hover:from-accent  hover:to-primary  hover:text-textPrimary cursor-pointer;
+    @apply inline-flex items-center gap-2 px-4 py-2 text-lg font-semibold text-primary border border-primary rounded-md transition duration-300 ease-in-out transform hover:scale-105 hover:bg-linear-to-r hover:from-accent3  hover:to-primary  hover:text-textPrimary cursor-pointer;
   }
 
   .social__icons {
