@@ -1,9 +1,10 @@
 ---
 import type { Technology } from "@data/technologies";
-import Award from "./icons/Award.astro";
+
 import Calendar from "./icons/Calendar.astro";
 import ExternalLink from "./icons/ExternalLink.astro";
-import Building2 from "./icons/Building2.astro";
+import Monitor from "./icons/Monitor.astro";
+import Certificate from "./icons/Certificate.astro";
 
 const { certificate } = Astro.props;
 
@@ -21,9 +22,9 @@ const formatDate = (dateString: string) => {
       <div class="flex items-start justify-between mb-4">
         <div class="flex items-center gap-3">
           <div
-            class="p-2 rounded-full bg-gradient-to-br from-cyan-400/20 to-purple-600/20 border border-cyan-400/30"
+            class="p-2 rounded-full bg-gradient-to-br from-secondary/20 to-primary/30 border border-cyan-400/30"
           >
-            <Award class="w-5 h-5 text-cyan-400" />
+            <Certificate class="w-5 h-5 text-white" />
           </div>
           <div class="flex items-center gap-2 text-sm text-gray-400">
             <Calendar class="w-4 h-4" />
@@ -45,7 +46,7 @@ const formatDate = (dateString: string) => {
       </h3>
 
       <div class="flex items-center gap-2 mb-4">
-        <Building2 class="w-4 h-4 text-accent" />
+        <Monitor class="w-4 h-4 text-accent" />
         <span class="text-accent font-medium text-sm">
           {certificate.issuer}
         </span>
