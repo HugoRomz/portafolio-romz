@@ -1,0 +1,28 @@
+---
+import CardCertificate from "@components/CardCertificate.astro";
+import Certificate from "@components/icons/Certificate.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import TitleSection from "@components/TitleSection.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCertificatesCardWithTech } from "src/utils/certificates";
+
+const certificates = getCertificatesCardWithTech();
+---
+
+<Layout title="Portfolio - Hugo Rosales Meléndez | Software Enginner">
+  <div class="pt-24 pb-16 md:py-32">
+    <SectionContainer>
+      <TitleSection>
+        <Certificate class="size-8" />
+        All Certificates
+      </TitleSection>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          certificates.map((certificate) => (
+            <CardCertificate certificate={certificate} />
+          ))
+        }
+      </div>
+    </SectionContainer>
+  </div>
+</Layout>

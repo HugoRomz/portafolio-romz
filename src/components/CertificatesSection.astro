@@ -1,34 +1,37 @@
 ---
 import CardCertificate from "./CardCertificate.astro";
 
-import {
-  getCertificatesCardWithTech,
-  getTotalCertificatesCount,
-} from "src/utils/certificates";
+import { getCertificatesCardWithTech } from "src/utils/certificates";
 
 const certificates = getCertificatesCardWithTech();
-const LIMIT = getTotalCertificatesCount();
+const LIMIT = 3;
 
 const duration = 80;
 ---
 
-<div class="wrapper">
-  <div class="items-container">
-    {
-      certificates.slice(0, LIMIT).map((certificate, index) => (
-        <div
-          class="item"
-          style={`left: max(calc(345px * ${LIMIT}),100%);animation-delay: ${(duration / LIMIT) * (LIMIT - index) * -1}s`}
-        >
-          <CardCertificate {certificate} />
-        </div>
-      ))
-    }
-  </div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {
+    certificates
+      .slice(0, LIMIT)
+      .map((certificate) => <CardCertificate {certificate} />)
+  }
+</div>
+<div class="flex items-center justify-center mt-8">
+  <a
+    href="/certificates"
+    class="action-btn bg-linear-to-r from-[#f59e0b] to-[#d97706] text-white px-4 py-2 text-center rounded-2xl font-semibold transition-all duration-300 ease-in-out backdrop-blur-md hover:transform hover:translate-y-0.5"
+  >
+    View all certificates
+  </a>
 </div>
 
 <style>
   @reference './../styles/global.css';
+
+  .action-btn:hover {
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+  }
+
   .wrapper {
     margin-inline: auto;
     /* mask-image: linear-gradient(
@@ -38,7 +41,7 @@ const duration = 80;
       rgba(0, 0, 0, 1) 95%,
       rgba(0, 0, 0, 0)
     ); */
-    @apply relative   h-[570px] overflow-hidden;
+    @apply relative overflow-hidden;
   }
 
   .wrapper:hover .item {
@@ -60,6 +63,6 @@ const duration = 80;
     animation-duration: 80s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    @apply w-[345px] absolute;
+    @apply w-[345px] h-auto absolute;
   }
 </style>

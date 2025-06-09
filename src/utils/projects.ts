@@ -1,7 +1,18 @@
 import { projects, type Project } from "@data/projects";
 import { technologies, type Technology } from "../data/technologies";
+import defaultIcon from "@assets/code-asterisk.svg";
 
-// Función para obtener proyectos con id y datos necearios junto con datos de tecnologías
+function createDefaultTech(techId: string): Technology {
+  return {
+    id: techId,
+    name: techId,
+    logo: defaultIcon,
+    bgColor: "#FFFFFF",
+    textColor: "#111827",
+    ringColor: "#D1D5DB",
+  };
+}
+
 export function getProjectsCardWithTech(): Array<{
   techDetails: { id: string; name: string }[];
 }> {
@@ -15,7 +26,9 @@ export function getProjectsCardWithTech(): Array<{
     demoUrl: project.demoUrl,
     cover: project.cover,
     techDetails: project.technologies.map(
-      (techId) => technologies.find((tech) => tech.id === techId)!,
+      (techId) =>
+        technologies.find((tech) => tech.id === techId) ??
+        createDefaultTech(techId),
     ),
   }));
 }

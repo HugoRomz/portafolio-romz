@@ -1,0 +1,24 @@
+---
+import CardProject from "@components/CardProject.astro";
+import Project from "@components/icons/Project.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import TitleSection from "@components/TitleSection.astro";
+import Layout from "@layouts/Layout.astro";
+import { getProjectsCardWithTech } from "src/utils/projects";
+
+const projects = getProjectsCardWithTech();
+---
+
+<Layout title="Portfolio - Hugo Rosales Meléndez | Software Enginner">
+  <div class="pt-24 pb-16 md:py-32">
+    <SectionContainer>
+      <TitleSection>
+        <Project class="size-8" />
+        All Projects
+      </TitleSection>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => <CardProject project={project} />)}
+      </div>
+    </SectionContainer>
+  </div>
+</Layout>
