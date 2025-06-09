@@ -1,6 +1,6 @@
 ---
 import type { Technology } from "@data/technologies";
-import { ArrowUpRight } from "@lucide/astro";
+import ArrowUp from "./icons/ArrowUp.astro";
 
 const { project } = Astro.props;
 ---
@@ -59,7 +59,7 @@ const { project } = Astro.props;
         <div class="project-actions flex gap-4 mb-4">
           <a href={project.demoUrl} target="_blank" class="project-btn primary">
             <span class="">
-              <ArrowUpRight />
+              <ArrowUp />
             </span>Preview</a
           >
           <a href={`/project/${project.id}`} class="project-btn">Open</a>
