@@ -38,17 +38,19 @@ const getStatusColor = (status: string) => {
 const StatusIcon = getStatusIcon(project.status);
 ---
 
-<article class="card group cursor-pointer mt-1">
-  <div class="relative h-48 overflow-hidden">
-    <img
-      src={project.cover}
-      alt={project.name}
-      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-    />
-    <div
+<article class="card group mt-1">
+  <div class="relative h-52 overflow-hidden">
+    <a href={`/project/${project.id}`}>
+      <img
+        src={project.cover}
+        alt={project.name}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+    </a>
+    <!-- <div
       class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
     >
-    </div>
+    </div> -->
 
     <div
       class={`absolute top-4 left-4 px-2 py-1 rounded-full text-xs font-medium border ${getStatusColor(project.status)} backdrop-blur-sm`}

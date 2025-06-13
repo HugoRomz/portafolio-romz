@@ -15,8 +15,64 @@ export interface Project {
   cover: string;
   images: string[];
 }
-
 export const projects: Project[] = [
+  {
+    id: "frontend-vanilla",
+    name: "Proyectos Frontend Vanilla",
+    description:
+      "Galería de proyectos desarrollados con tecnologías puras del frontend: HTML, CSS y JavaScript. Cada proyecto está enfocado en reforzar los fundamentos del desarrollo web sin depender de frameworks complejos.",
+    descriptionShort:
+      "Galería de proyectos hechos con HTML, CSS y JS para practicar fundamentos del frontend.",
+    technologies: ["astro", "tailwind", "html", "css", "js"],
+    status: "active",
+    githubUrl: "https://github.com/HugoRomz/romz-frontend-fundamentals",
+    demoUrl: "https://frontend.romz.site/",
+
+    features: [
+      {
+        title: "Vista en Grid Dinámica",
+        description:
+          "Diseño en cuadrícula que muestra visualmente todos los proyectos vanilla realizados, con soporte responsivo y orden limpio.",
+      },
+      {
+        title: "Navegación Simple e Intuitiva",
+        description:
+          "Interfaz minimalista que permite navegar fácilmente entre los distintos proyectos y ver detalles básicos de cada uno.",
+      },
+      {
+        title: "Proyectos 100% Vanilla",
+        description:
+          "Cada proyecto listado fue construido con HTML, CSS y JavaScript puro, sin frameworks adicionales en el cliente.",
+      },
+    ],
+
+    programFunctionality: [
+      {
+        title: "Renderizado Estático",
+        description:
+          "La galería está generada estáticamente con Astro, asegurando carga rápida y buen rendimiento.",
+        icon: "⚡",
+      },
+      {
+        title: "Diseño Responsivo",
+        description:
+          "Adaptado a distintos tamaños de pantalla para una experiencia fluida en móviles y escritorio.",
+        icon: "📱",
+      },
+      {
+        title: "Escalabilidad de Contenido",
+        description:
+          "Permite agregar nuevos proyectos fácilmente manteniendo la estructura visual y semántica.",
+        icon: "🧱",
+      },
+    ],
+
+    cover:
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/v1749805072/Portafolio/Projects/proyectos-frontend-vanilla/739shots_so_sekr4h.webp",
+    images: [
+      "https://res.cloudinary.com/dhcer3iwe/image/upload/t_Banner 16:9/v1749805072/Portafolio/Projects/proyectos-frontend-vanilla/739shots_so_sekr4h.webp",
+    ],
+  },
   {
     id: "lexarium",
     name: "LEXARIUM",
