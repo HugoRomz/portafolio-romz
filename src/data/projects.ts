@@ -90,8 +90,8 @@ export const projects: Project[] = [
       "vercel",
     ],
     status: "active",
-    githubUrl: "https://github.com/HugoRomz/EnglishWordApp.git",
-    demoUrl: "https://english-word-app-seven.vercel.app/",
+    githubUrl: "https://github.com/HugoRomz/lexarium.git",
+    demoUrl: "https://lexarium.romz.site/",
 
     features: [
       {
